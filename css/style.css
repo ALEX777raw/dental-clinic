@@ -1555,13 +1555,16 @@ a.contact-item-value:hover {
     right: 0 !important;
     bottom: 75px !important;
     width: 360px !important;
+    min-width: 360px !important;
+    max-width: 360px !important;
     height: 500px !important;
-    max-height: calc(100vh - 100px);
+    min-height: 500px !important;
+    max-height: 500px !important;
     background-color: #ffffff !important;
     border-radius: 16px !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25) !important;
-    display: none;
-    flex-direction: column;
+    display: none !important;
+    flex-direction: column !important;
     overflow: hidden !important;
     z-index: 9999 !important;
 }
@@ -1586,11 +1589,18 @@ a.contact-item-value:hover {
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
 }
 
 .chat-header-avatar {
     width: 44px !important;
     height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    max-width: 44px !important;
+    max-height: 44px !important;
     border-radius: 50% !important;
     object-fit: cover !important;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
@@ -1600,6 +1610,9 @@ a.contact-item-value:hover {
 .chat-header-text {
     display: flex !important;
     flex-direction: column !important;
+    gap: 2px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
 }
 
 .chat-header-name {
@@ -1607,24 +1620,33 @@ a.contact-item-value:hover {
     font-weight: 600 !important;
     color: white !important;
     margin: 0 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 
 .chat-header-status {
     font-size: 12px !important;
-    opacity: 0.9;
+    opacity: 0.9 !important;
     display: flex !important;
     align-items: center !important;
     gap: 5px !important;
     color: white !important;
     margin: 0 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #4ade80;
-    border-radius: 50%;
-    animation: pulse-dot 2s infinite;
+    width: 8px !important;
+    height: 8px !important;
+    min-width: 8px !important;
+    min-height: 8px !important;
+    background-color: #4ade80 !important;
+    border-radius: 50% !important;
+    animation: pulse-dot 2s infinite !important;
+    display: inline-block !important;
 }
 
 @keyframes pulse-dot {
@@ -1682,6 +1704,10 @@ a.contact-item-value:hover {
 .message-avatar {
     width: 32px !important;
     height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
     border-radius: 50% !important;
     object-fit: cover !important;
     flex-shrink: 0 !important;
@@ -1692,6 +1718,10 @@ a.contact-item-value:hover {
     padding: 12px 16px !important;
     border-radius: 16px !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
 }
 
 .chat-message.incoming .message-content {
@@ -1748,6 +1778,9 @@ a.contact-item-value:hover {
     cursor: pointer !important;
     transition: all 0.2s ease !important;
     white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 .quick-reply-btn:hover {

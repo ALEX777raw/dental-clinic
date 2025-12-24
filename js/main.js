@@ -47,7 +47,7 @@
     function initParallax() {
         if (App.reducedMotion || App.isMobile) return;
 
-        const parallaxElements = document.querySelectorAll('.hero-bg-image, .services-bg-image, .cta-bg-image');
+        const parallaxElements = document.querySelectorAll('.services-bg-image, .cta-bg-image');
 
         if (!parallaxElements.length) return;
 
@@ -66,12 +66,7 @@
                 if (inView) {
                     const speed = 0.3;
                     const yPos = (rect.top * speed);
-                    // Preserve rotation for hero image
-                    if (el.classList.contains('hero-bg-image')) {
-                        el.style.transform = 'translate3d(0, ' + yPos + 'px, 0) rotate(-1.5deg) scale(1.05)';
-                    } else {
-                        el.style.transform = 'translate3d(0, ' + yPos + 'px, 0) scale(1.1)';
-                    }
+                    el.style.transform = 'translate3d(0, ' + yPos + 'px, 0) scale(1.1)';
                 }
             });
 

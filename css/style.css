@@ -253,6 +253,7 @@ address {
 
 .section-header {
     margin-bottom: var(--spacing-12);
+    position: relative;
 }
 
 .section-header.centered {
@@ -1539,6 +1540,8 @@ a.contact-item-value:hover {
     background-color: var(--color-gray-900);
     color: var(--color-gray-300);
     padding: var(--spacing-16) 0 var(--spacing-8);
+    position: relative;
+    overflow: hidden;
 }
 
 .footer-grid {
@@ -7319,4 +7322,180 @@ img {
     height: 100%;
     background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-primary) 100%);
     border-radius: 2px;
+}
+
+/* ============================================
+   DENTAL DECORATIVE ELEMENTS
+   ============================================ */
+
+/* Tooth decorations for sections */
+.about-section::after,
+.provider-section::after,
+.contact-section::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%231B3A5D' d='M50 10 C30 10 20 20 20 35 C20 50 25 70 30 80 C32 85 35 90 40 90 C45 90 47 85 50 75 C53 85 55 90 60 90 C65 90 68 85 70 80 C75 70 80 50 80 35 C80 20 70 10 50 10 Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.about-section::after {
+    top: 10%;
+    right: 5%;
+    transform: rotate(15deg);
+}
+
+.provider-section::after {
+    bottom: 15%;
+    left: 8%;
+    transform: rotate(-20deg);
+    opacity: 0.04;
+}
+
+.contact-section::after {
+    top: 20%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    transform: rotate(25deg);
+}
+
+/* Dental tools pattern background */
+.services-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cg fill='%23ffffff' opacity='0.02'%3E%3Cpath d='M50 20 L50 80 M45 25 L55 25 M45 75 L55 75' stroke='%23ffffff' stroke-width='2' fill='none'/%3E%3Ccircle cx='150' cy='50' r='8' /%3E%3Cpath d='M145 58 L145 80 L155 80 L155 58' /%3E%3Cpath d='M100 100 C100 90 110 85 120 85 C130 85 140 90 140 100 L140 120 L100 120 Z' /%3E%3C/g%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Smile decoration for hero section */
+.hero-main::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    width: 150px;
+    height: 150px;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='3' d='M20 50 Q30 70 50 70 Q70 70 80 50' stroke-linecap='round'/%3E%3Ccircle cx='35' cy='35' r='3' fill='%23ffffff'/%3E%3Ccircle cx='65' cy='35' r='3' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    animation: floatSmile 6s ease-in-out infinite;
+}
+
+@keyframes floatSmile {
+    0%, 100% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-20px) rotate(-5deg); }
+}
+
+/* Sparkle teeth decoration */
+.hero-provider::after {
+    content: '✨';
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    font-size: 40px;
+    opacity: 0.15;
+    animation: sparkleFloat 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+    50% { transform: translateY(-15px) scale(1.2); opacity: 0.25; }
+}
+
+/* Multiple tooth decorations with different positions */
+.about-content::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg);
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23C5A572' d='M50 10 C30 10 20 20 20 35 C20 50 25 70 30 80 C32 85 35 90 40 90 C45 90 47 85 50 75 C53 85 55 90 60 90 C65 90 68 85 70 80 C75 70 80 50 80 35 C80 20 70 10 50 10 Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Dental chair decoration */
+.contact-info-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    right: -30px;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%231B3A5D' d='M30 40 L70 40 L70 60 L65 80 L35 80 L30 60 Z M45 20 L55 20 L55 40 L45 40 Z M25 40 L30 40 L30 50 L25 50 Z M70 40 L75 40 L75 50 L70 50 Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Toothbrush decoration */
+.service-card:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='35' y='20' width='30' height='50' rx='5' fill='%23ffffff'/%3E%3Crect x='40' y='70' width='20' height='10' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Shining tooth with sparkles */
+.section-header::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: -20px;
+    right: -30px;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23C5A572' d='M50 15 C35 15 25 22 25 35 C25 48 28 65 32 75 C34 80 37 85 42 85 C47 85 48 80 50 72 C52 80 53 85 58 85 C63 85 66 80 68 75 C72 65 75 48 75 35 C75 22 65 15 50 15 Z'/%3E%3Cpolygon points='30,25 35,30 30,35' fill='%23ffffff' opacity='0.6'/%3E%3Cpolygon points='70,30 75,35 70,40' fill='%23ffffff' opacity='0.6'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    animation: shineRotate 8s linear infinite;
+}
+
+@keyframes shineRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Small teeth pattern for footer */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath fill='%23ffffff' d='M25 20 C20 20 18 22 18 27 C18 32 20 40 22 45 C23 47 24 50 27 50 C30 50 31 47 32 42 C33 47 34 50 37 50 C40 50 41 47 42 45 C44 40 46 32 46 27 C46 22 44 20 39 20 C34 20 32 22 32 25 C32 22 30 20 25 20 Z'/%3E%3C/svg%3E");
+    background-size: 50px 50px;
+    background-repeat: repeat-x;
+    background-position: center;
+    pointer-events: none;
 }

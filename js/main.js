@@ -60,11 +60,12 @@
                 const heroSection = heroImage.closest('.hero-main');
                 if (heroSection) {
                     const rect = heroSection.getBoundingClientRect();
-                    const isVisible = rect.bottom > 0;
+                    const isVisible = rect.bottom > 0 && rect.top < window.innerHeight;
 
                     if (isVisible) {
-                        const speed = 0.5; // Image moves at 50% of scroll speed
-                        const yPos = scrollTop * speed;
+                        // Calculate movement based on section position
+                        const speed = 0.3;
+                        const yPos = -rect.top * speed;
                         heroImage.style.transform = 'translate3d(0, ' + yPos + 'px, 0)';
                     }
                 }

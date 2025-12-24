@@ -744,6 +744,7 @@ address {
     object-fit: cover;
     object-position: center;
     will-change: transform;
+    transform: rotate(-1.5deg) scale(1.05);
 }
 
 .hero-overlay {

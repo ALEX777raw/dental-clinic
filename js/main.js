@@ -66,7 +66,12 @@
                 if (inView) {
                     const speed = 0.3;
                     const yPos = (rect.top * speed);
-                    el.style.transform = 'translate3d(0, ' + yPos + 'px, 0) scale(1.1)';
+                    // Preserve rotation for hero image
+                    if (el.classList.contains('hero-bg-image')) {
+                        el.style.transform = 'translate3d(0, ' + yPos + 'px, 0) rotate(-1.5deg) scale(1.05)';
+                    } else {
+                        el.style.transform = 'translate3d(0, ' + yPos + 'px, 0) scale(1.1)';
+                    }
                 }
             });
 

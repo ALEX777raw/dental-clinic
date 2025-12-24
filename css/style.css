@@ -888,95 +888,85 @@ address {
 }
 
 .provider-text {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+    background: #ffffff;
     padding: var(--spacing-10);
     border-radius: var(--radius-2xl);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(197, 165, 114, 0.15);
-    border: 2px solid transparent;
-    background-clip: padding-box;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border: 3px solid rgba(197, 165, 114, 0.25);
     position: relative;
+    transition: all 0.3s ease;
 }
 
-.provider-text::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
-    border-radius: var(--radius-2xl);
-    z-index: -1;
-    opacity: 0.3;
+.provider-text:hover {
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+    border-color: rgba(197, 165, 114, 0.4);
+    transform: translateY(-2px);
 }
 
 .provider-title {
     font-size: 2.5rem;
     font-weight: var(--font-weight-bold);
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--spacing-6);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-4);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
     position: relative;
-    padding-bottom: var(--spacing-4);
+    padding-bottom: 0;
 }
 
-.provider-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100px;
+.provider-text .title-underline {
+    width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, var(--color-accent) 0%, transparent 100%);
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-light) 50%, transparent 100%);
+    margin: var(--spacing-4) 0 var(--spacing-6) 0;
     border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(197, 165, 114, 0.3);
 }
 
 .provider-description {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--color-gray-800);
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--color-gray-700);
     font-weight: var(--font-weight-regular);
     margin: 0;
 }
 
-.provider-description::first-line {
-    font-weight: var(--font-weight-semibold);
-    font-size: 1.2em;
+.provider-description strong,
+.provider-description .text-link {
     color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.provider-description .text-link {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    transition: all 0.3s ease;
+}
+
+.provider-description .text-link:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-primary);
 }
 
 .provider-badge {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+    background: #ffffff;
     padding: var(--spacing-8);
     border-radius: var(--radius-2xl);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(197, 165, 114, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border: 3px solid rgba(197, 165, 114, 0.25);
     position: relative;
     transition: all 0.3s ease;
 }
 
 .provider-badge:hover {
     transform: translateY(-5px);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
-}
-
-.provider-badge::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
-    border-radius: var(--radius-2xl);
-    z-index: -1;
-    opacity: 0.2;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+    border-color: rgba(197, 165, 114, 0.4);
 }
 
 .badge-content {
@@ -7609,12 +7599,13 @@ img {
 
     .provider-title {
         font-size: 1.75rem;
-        margin-bottom: var(--spacing-4);
+        margin-bottom: var(--spacing-3);
     }
 
-    .provider-title::after {
-        width: 60px;
+    .provider-text .title-underline {
+        width: 80px;
         height: 3px;
+        margin: var(--spacing-3) 0 var(--spacing-4) 0;
     }
 
     .provider-description {

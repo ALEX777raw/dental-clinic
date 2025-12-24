@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Услуги стоматологической клиники Здоровая Улыбка - терапия, хирургия, ортодонтия, имплантация, отбеливание, протезирование.">
+    <title>Услуги - Здоровая Улыбка</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Здоровая Улыбка - Стоматология" class="logo-img">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="about.html" class="nav-link">О НАС</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="services.html" class="nav-link active">УСЛУГИ</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/therapy.html">Терапия</a></li>
+                            <li><a href="services/surgery.html">Хирургия</a></li>
+                            <li><a href="services/orthodontics.html">Ортодонтия</a></li>
+                            <li><a href="services/implantation.html">Имплантация</a></li>
+                            <li><a href="services/whitening.html">Отбеливание</a></li>
+                            <li><a href="services/prosthetics.html">Протезирование</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="contacts.html" class="nav-link">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:+74951234567" class="phone-link">
+                    <svg class="phone-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>+7 (495) 123-45-67</span>
+                </a>
+                <a href="booking.html" class="btn btn-primary btn-appointment">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>Записаться</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo"><img src="images/logo.svg" alt="Здоровая Улыбка"></a>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Закрыть меню">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">О нас</a></li>
+                <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Услуги</a></li>
+                <li class="mobile-nav-item"><a href="contacts.html" class="mobile-nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); padding: 8rem 0 4rem; color: white;">
+            <div class="container">
+                <nav class="breadcrumb" style="margin-bottom: 2rem;">
+                    <span class="breadcrumb-item"><a href="index.html" style="color: rgba(255,255,255,0.8);">Главная</a></span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.5); margin: 0 0.5rem;">/</span>
+                    <span class="breadcrumb-item active" style="color: white;">Услуги</span>
+                </nav>
+                <h1 style="color: white; font-size: 3rem; margin-bottom: 1rem;">Наши услуги</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 600px;">Полный спектр стоматологических услуг для всей семьи от профессиональных специалистов.</p>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+
+                    <!-- Терапия -->
+                    <div class="card" style="overflow: hidden;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1B3A5D 0%, #2C5282 100%); display: flex; align-items: center; justify-content: center;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                <path d="M12 2C8 2 5 6 5 12c0 5 2 8 5 10h4c3-2 5-5 5-10 0-6-3-10-7-10z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Терапия</h3>
+                            <p class="card-text">Лечение кариеса, пульпита, периодонтита. Профессиональная гигиена полости рта и профилактика заболеваний.</p>
+                            <a href="services/therapy.html" class="btn btn-outline" style="margin-top: 1rem;">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <!-- Хирургия -->
+                    <div class="card" style="overflow: hidden;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1B3A5D 0%, #2C5282 100%); display: flex; align-items: center; justify-content: center;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Хирургия</h3>
+                            <p class="card-text">Удаление зубов любой сложности, в том числе зубов мудрости. Операции на мягких тканях полости рта.</p>
+                            <a href="services/surgery.html" class="btn btn-outline" style="margin-top: 1rem;">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <!-- Ортодонтия -->
+                    <div class="card" style="overflow: hidden;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1B3A5D 0%, #2C5282 100%); display: flex; align-items: center; justify-content: center;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                <rect x="3" y="8" width="18" height="8" rx="2"/>
+                                <line x1="7" y1="8" x2="7" y2="16"/>
+                                <line x1="12" y1="8" x2="12" y2="16"/>
+                                <line x1="17" y1="8" x2="17" y2="16"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Ортодонтия</h3>
+                            <p class="card-text">Исправление прикуса с помощью брекетов и элайнеров. Индивидуальный план лечения для детей и взрослых.</p>
+                            <a href="services/orthodontics.html" class="btn btn-outline" style="margin-top: 1rem;">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <!-- Имплантация -->
+                    <div class="card" style="overflow: hidden;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1B3A5D 0%, #2C5282 100%); display: flex; align-items: center; justify-content: center;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                <path d="M12 2v4M12 18v4"/>
+                                <path d="M9 6h6l-1 6h-4l-1-6z"/>
+                                <path d="M10 12h4v6h-4z"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Имплантация</h3>
+                            <p class="card-text">Установка зубных имплантов ведущих мировых производителей. Восстановление улыбки на всю жизнь.</p>
+                            <a href="services/implantation.html" class="btn btn-outline" style="margin-top: 1rem;">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <!-- Отбеливание -->
+                    <div class="card" style="overflow: hidden;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #C5A572 0%, #D4B88A 100%); display: flex; align-items: center; justify-content: center;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" y1="1" x2="12" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="23"/>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                <line x1="1" y1="12" x2="3" y2="12"/>
+                                <line x1="21" y1="12" x2="23" y2="12"/>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Отбеливание</h3>
+                            <p class="card-text">Профессиональное отбеливание зубов. Безопасные методы для достижения белоснежной улыбки.</p>
+                            <a href="services/whitening.html" class="btn btn-outline" style="margin-top: 1rem;">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <!-- Протезирование -->
+                    <div class="card" style="overflow: hidden;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1B3A5D 0%, #2C5282 100%); display: flex; align-items: center; justify-content: center;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                <path d="M4 12c0 4 2 8 8 8s8-4 8-8"/>
+                                <path d="M8 12h8"/>
+                                <circle cx="8" cy="8" r="2"/>
+                                <circle cx="16" cy="8" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Протезирование</h3>
+                            <p class="card-text">Коронки, виниры, мосты и съемные протезы. Восстановление функции и эстетики зубного ряда.</p>
+                            <a href="services/prosthetics.html" class="btn btn-outline" style="margin-top: 1rem;">Подробнее</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" style="background: var(--color-gray-50);">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Не уверены, какая услуга вам нужна?</h2>
+                <p style="font-size: 1.125rem; color: var(--color-gray-600); margin: 1.5rem 0 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    Запишитесь на бесплатную консультацию, и наши специалисты помогут подобрать оптимальный план лечения.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="booking.html" class="btn btn-primary btn-large">Записаться на консультацию</a>
+                    <a href="tel:+74951234567" class="btn btn-outline btn-large">Позвонить</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p class="copyright">&copy; 2024 Здоровая Улыбка. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

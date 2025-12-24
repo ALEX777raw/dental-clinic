@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C5A572"/>
+      <stop offset="100%" style="stop-color:#A68B5B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- "ЗДОРОВАЯ" text -->
+  <text x="10" y="22" font-family="Arial, sans-serif" font-size="10" font-weight="500" fill="#1B3A5D" letter-spacing="3">ЗДОРОВАЯ</text>
+
+  <!-- "Улыбка" script text -->
+  <text x="10" y="55" font-family="Georgia, serif" font-size="36" font-style="italic" fill="#1B3A5D">Улыбка</text>
+
+  <!-- Tooth icon with gold accent -->
+  <g transform="translate(145, 15)">
+    <path d="M15 5C10 5 5 10 5 20C5 30 10 40 15 45C20 40 25 30 25 20C25 10 20 5 15 5Z" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="15" cy="18" r="3" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- "СТОМАТОЛОГИЯ" text -->
+  <text x="10" y="72" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#1B3A5D" letter-spacing="4">СТОМАТОЛОГИЯ</text>
+</svg>

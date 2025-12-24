@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контакты стоматологической клиники Здоровая Улыбка - адрес, телефон, часы работы, форма обратной связи.">
+    <title>Контакты - Здоровая Улыбка</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Здоровая Улыбка - Стоматология" class="logo-img">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="about.html" class="nav-link">О НАС</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">УСЛУГИ</a></li>
+                    <li class="nav-item"><a href="contacts.html" class="nav-link active">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:+74951234567" class="phone-link">
+                    <svg class="phone-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>+7 (495) 123-45-67</span>
+                </a>
+                <a href="booking.html" class="btn btn-primary btn-appointment">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>Записаться</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo"><img src="images/logo.svg" alt="Здоровая Улыбка"></a>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Закрыть меню">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">О нас</a></li>
+                <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Услуги</a></li>
+                <li class="mobile-nav-item"><a href="contacts.html" class="mobile-nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); padding: 8rem 0 4rem; color: white;">
+            <div class="container">
+                <nav class="breadcrumb" style="margin-bottom: 2rem;">
+                    <span class="breadcrumb-item"><a href="index.html" style="color: rgba(255,255,255,0.8);">Главная</a></span>
+                    <span class="breadcrumb-separator" style="color: rgba(255,255,255,0.5); margin: 0 0.5rem;">/</span>
+                    <span class="breadcrumb-item active" style="color: white;">Контакты</span>
+                </nav>
+                <h1 style="color: white; font-size: 3rem; margin-bottom: 1rem;">Контакты</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 600px;">Свяжитесь с нами любым удобным способом или приходите в нашу клинику.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem;">
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--color-primary);">Свяжитесь с нами</h2>
+
+                        <div style="margin-bottom: 2rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                                <div style="width: 50px; height: 50px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; font-weight: 600; color: var(--color-gray-800); margin-bottom: 0.25rem;">Телефон</h4>
+                                    <a href="tel:+74951234567" style="font-size: 1.25rem; color: var(--color-primary); font-weight: 600;">+7 (495) 123-45-67</a>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                                <div style="width: 50px; height: 50px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; font-weight: 600; color: var(--color-gray-800); margin-bottom: 0.25rem;">Email</h4>
+                                    <a href="mailto:info@healthy-smile.ru" style="font-size: 1rem; color: var(--color-gray-600);">info@healthy-smile.ru</a>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                                <div style="width: 50px; height: 50px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; font-weight: 600; color: var(--color-gray-800); margin-bottom: 0.25rem;">Адрес</h4>
+                                    <address style="font-size: 1rem; color: var(--color-gray-600); font-style: normal;">
+                                        ул. Примерная, д. 123<br>
+                                        Москва, 123456
+                                    </address>
+                                    <p style="font-size: 0.875rem; color: var(--color-gray-500); margin-top: 0.5rem;">Парковка доступна на заднем дворе</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Working Hours -->
+                        <div style="background: var(--color-gray-50); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4 style="font-size: 1rem; font-weight: 600; color: var(--color-gray-800); margin-bottom: 1rem;">Часы работы</h4>
+                            <ul style="list-style: none;">
+                                <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-gray-200);">
+                                    <span style="font-weight: 500;">Понедельник</span>
+                                    <span style="color: var(--color-gray-600);">По записи</span>
+                                </li>
+                                <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-gray-200);">
+                                    <span style="font-weight: 500;">Вторник</span>
+                                    <span style="color: var(--color-gray-600);">8:00 - 16:30</span>
+                                </li>
+                                <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-gray-200);">
+                                    <span style="font-weight: 500;">Среда</span>
+                                    <span style="color: var(--color-gray-600);">9:00 - 17:30</span>
+                                </li>
+                                <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-gray-200);">
+                                    <span style="font-weight: 500;">Четверг</span>
+                                    <span style="color: var(--color-gray-600);">9:00 - 17:00</span>
+                                </li>
+                                <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-gray-200);">
+                                    <span style="font-weight: 500;">Пятница</span>
+                                    <span style="color: var(--color-gray-600);">7:00 - 15:00</span>
+                                </li>
+                                <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-gray-200);">
+                                    <span style="font-weight: 500;">Суббота</span>
+                                    <span style="color: var(--color-gray-600);">По записи</span>
+                                </li>
+                                <li style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                    <span style="font-weight: 500;">Воскресенье</span>
+                                    <span style="color: var(--color-error);">Закрыто</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <div style="background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-primary);">Напишите нам</h3>
+
+                            <form data-validate>
+                                <div class="form-group">
+                                    <label class="form-label required">Ваше имя</label>
+                                    <input type="text" class="form-input" name="name" required placeholder="Введите ваше имя">
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div class="form-group">
+                                        <label class="form-label required">Телефон</label>
+                                        <input type="tel" class="form-input" name="phone" required placeholder="+7 (___) ___-__-__">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-input" name="email" placeholder="email@example.com">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Тема обращения</label>
+                                    <select class="form-select" name="subject">
+                                        <option value="">Выберите тему</option>
+                                        <option value="appointment">Запись на прием</option>
+                                        <option value="question">Вопрос о лечении</option>
+                                        <option value="prices">Вопрос о ценах</option>
+                                        <option value="feedback">Отзыв</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label required">Сообщение</label>
+                                    <textarea class="form-textarea" name="message" required placeholder="Ваше сообщение..." rows="5"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input" required>
+                                        <span class="form-check-label">Я согласен с <a href="privacy.html" style="color: var(--color-primary);">политикой конфиденциальности</a></span>
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Отправить сообщение</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.3!2d37.6!3d55.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQyJzAwLjAiTiAzN8KwMzYnMDAuMCJF!5e0!3m2!1sru!2sru!4v1234567890"
+                        width="100%"
+                        height="450"
+                        style="border:0; display: block;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        title="Карта расположения клиники">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p class="copyright">&copy; 2024 Здоровая Улыбка. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

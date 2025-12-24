@@ -47,15 +47,30 @@
     function initParallax() {
         if (App.reducedMotion || App.isMobile) return;
 
+        const heroImage = document.querySelector('.hero-bg-image');
         const parallaxElements = document.querySelectorAll('.services-bg-image, .cta-bg-image');
-
-        if (!parallaxElements.length) return;
 
         let ticking = false;
 
         function updateParallax() {
             const scrollTop = window.pageYOffset;
 
+            // Hero parallax effect - image moves with scroll
+            if (heroImage) {
+                const heroSection = heroImage.closest('.hero-main');
+                if (heroSection) {
+                    const rect = heroSection.getBoundingClientRect();
+                    const isVisible = rect.bottom > 0;
+
+                    if (isVisible) {
+                        const speed = 0.5; // Image moves at 50% of scroll speed
+                        const yPos = scrollTop * speed;
+                        heroImage.style.transform = 'translate3d(0, ' + yPos + 'px, 0)';
+                    }
+                }
+            }
+
+            // Other parallax elements
             parallaxElements.forEach(function(el) {
                 const parent = el.closest('section');
                 if (!parent) return;

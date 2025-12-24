@@ -1101,19 +1101,54 @@
 
     <!-- Chat Widget -->
     <div class="chat-widget" id="chatWidget">
-        <div class="chat-popup" id="chatPopup">
-            <div class="chat-popup-header">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Консультант" class="chat-avatar">
-                <div class="chat-popup-text">
-                    <span class="chat-greeting">Здравствуйте! Есть вопросы?</span>
-                    <span class="chat-subtext">Напишите нам.</span>
+        <div class="chat-window" id="chatWindow">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Консультант" class="chat-header-avatar">
+                    <div class="chat-header-text">
+                        <span class="chat-header-name">Консультант</span>
+                        <span class="chat-header-status"><span class="status-dot"></span> Онлайн</span>
+                    </div>
                 </div>
-                <button class="chat-popup-close" id="chatPopupClose" aria-label="Закрыть" onclick="document.getElementById('chatPopup').classList.remove('visible')">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <button class="chat-close-btn" id="chatCloseBtn" aria-label="Закрыть чат">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message incoming">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="" class="message-avatar">
+                    <div class="message-content">
+                        <p>Здравствуйте! 👋</p>
+                        <p>Добро пожаловать в клинику "Здоровая Улыбка". Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Replies -->
+            <div class="chat-quick-replies">
+                <button class="quick-reply-btn" onclick="sendQuickReply('Хочу записаться на прием')">Записаться на прием</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Узнать цены')">Узнать цены</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Часы работы?')">Часы работы</button>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение..." onkeypress="if(event.key==='Enter')sendMessage()">
+                <button class="chat-send-btn" id="chatSendBtn" onclick="sendMessage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
                 </button>
             </div>
         </div>
-        <button class="chat-button" id="chatButton" aria-label="Открыть чат" onclick="document.getElementById('chatPopup').classList.toggle('visible')">
+
+        <button class="chat-button" id="chatButton" aria-label="Открыть чат">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
                 <circle cx="8" cy="10" r="1.2"/>
@@ -1122,6 +1157,70 @@
             </svg>
         </button>
     </div>
+
+    <script>
+    // Chat functionality
+    function toggleChat() {
+        const chatWindow = document.getElementById('chatWindow');
+        chatWindow.classList.toggle('open');
+    }
+
+    document.getElementById('chatButton').addEventListener('click', toggleChat);
+    document.getElementById('chatCloseBtn').addEventListener('click', toggleChat);
+
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        if (!message) return;
+
+        addMessage(message, 'outgoing');
+        input.value = '';
+
+        // Simulate response
+        setTimeout(() => {
+            const responses = [
+                'Спасибо за ваше сообщение! Наш специалист скоро свяжется с вами.',
+                'Для записи на прием позвоните по номеру +7 (495) 123-45-67 или оставьте заявку на сайте.',
+                'Мы работаем: Пн-Пт 9:00-20:00, Сб 10:00-18:00. Будем рады вас видеть!'
+            ];
+            addMessage(responses[Math.floor(Math.random() * responses.length)], 'incoming');
+        }, 1000);
+    }
+
+    function sendQuickReply(text) {
+        addMessage(text, 'outgoing');
+
+        setTimeout(() => {
+            let response = '';
+            if (text.includes('записаться')) {
+                response = 'Отлично! Для записи позвоните +7 (495) 123-45-67 или нажмите кнопку "Записаться" в меню сайта. Какая услуга вас интересует?';
+            } else if (text.includes('цены')) {
+                response = 'Консультация - бесплатно, чистка от 3000₽, лечение кариеса от 4500₽. Полный прайс на странице "Услуги".';
+            } else if (text.includes('Часы')) {
+                response = 'Мы работаем: Пн-Пт с 9:00 до 20:00, Сб с 10:00 до 18:00. Вс - выходной. Ждём вас!';
+            }
+            addMessage(response, 'incoming');
+        }, 800);
+    }
+
+    function addMessage(text, type) {
+        const messagesDiv = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'chat-message ' + type;
+
+        const now = new Date();
+        const time = now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+
+        if (type === 'incoming') {
+            messageDiv.innerHTML = '<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="" class="message-avatar"><div class="message-content"><p>' + text + '</p><span class="message-time">' + time + '</span></div>';
+        } else {
+            messageDiv.innerHTML = '<div class="message-content"><p>' + text + '</p><span class="message-time">' + time + '</span></div>';
+        }
+
+        messagesDiv.appendChild(messageDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+    </script>
 
     <script src="js/navigation.js"></script>
     <script src="js/slider.js"></script>

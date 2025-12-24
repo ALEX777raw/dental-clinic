@@ -735,6 +735,7 @@ address {
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .hero-bg-image {
@@ -956,12 +957,30 @@ address {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     margin: 0 auto var(--spacing-6);
-    background-color: var(--color-accent);
+    background: linear-gradient(145deg, #d4b88a 0%, #c5a572 50%, #a68b5b 100%);
     border-radius: var(--radius-full);
     color: var(--color-white);
+    box-shadow: 0 8px 25px rgba(197, 165, 114, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+    stroke: none;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(197, 165, 114, 0.5),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .service-title {
@@ -1912,17 +1931,6 @@ a.contact-item-value:hover {
 .service-card:hover {
     transform: translateY(-15px);
     background-color: rgba(255, 255, 255, 0.05);
-}
-
-.service-card:hover .service-icon {
-    animation: iconBounce 0.6s ease;
-}
-
-@keyframes iconBounce {
-    0%, 100% { transform: scale(1); }
-    25% { transform: scale(1.2); }
-    50% { transform: scale(0.95); }
-    75% { transform: scale(1.1); }
 }
 
 .service-underline {
@@ -3555,18 +3563,20 @@ a.contact-item-value:hover {
 /* Section Divider Wave */
 .section-wave {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 5;
 }
 
 .section-wave svg {
     position: relative;
     display: block;
-    width: calc(100% + 1.3px);
+    width: calc(100% + 2px);
     height: 80px;
+    margin-left: -1px;
 }
 
 .section-wave svg path {

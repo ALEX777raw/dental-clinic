@@ -335,6 +335,58 @@
                         <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80" alt="Интерьер клиники" class="about-image">
                     </div>
                 </div>
+
+                <!-- Виртуальный тур / Видео секция -->
+                <div class="video-showcase" style="margin-top: 4rem; position: relative; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);" data-animate="fade-up">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
+                        <!-- Заглушка для видео - можно заменить на реальное видео -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=80') center/cover;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);"></div>
+                            <div style="position: relative; z-index: 1; text-align: center; color: white;">
+                                <div class="svg-pulse" style="margin: 0 auto 1.5rem; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.35)'; this.style.transform='scale(1.1)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.25)'; this.style.transform='scale(1)'">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <h3 style="font-size: 2rem; margin-bottom: 0.5rem; font-family: var(--font-primary);">Виртуальный тур по клинике</h3>
+                                <p style="font-size: 1.1rem; opacity: 0.9;">Познакомьтесь с нашим современным оборудованием</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Почему Здоровая Улыбка - Расширенная версия -->
+                <div class="about-highlights" style="margin-top: 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;" data-animate="fade-up">
+                    <div class="highlight-card" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'">
+                        <div class="highlight-icon svg-heartbeat" style="width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #007ACC, #87CEEB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <h4 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.75rem; font-family: var(--font-primary);">Передовые технологии</h4>
+                        <p style="color: var(--color-gray-600); line-height: 1.6; font-size: 0.95rem;">Цифровые рентгены, 3D-визуализация и лазерная стоматология для точной диагностики и комфортного лечения.</p>
+                    </div>
+
+                    <div class="highlight-card" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'">
+                        <div class="highlight-icon svg-float" style="width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #007ACC, #87CEEB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h4 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.75rem; font-family: var(--font-primary);">Семейная забота</h4>
+                        <p style="color: var(--color-gray-600); line-height: 1.6; font-size: 0.95rem;">Комплексные стоматологические услуги для пациентов всех возрастов, от детей до пожилых людей.</p>
+                    </div>
+
+                    <div class="highlight-card" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.4s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'">
+                        <div class="highlight-icon svg-glow" style="width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #007ACC, #87CEEB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                        </div>
+                        <h4 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.75rem; font-family: var(--font-primary);">Обучение пациентов</h4>
+                        <p style="color: var(--color-gray-600); line-height: 1.6; font-size: 0.95rem;">Мы уделяем время на объяснение всех процедур и подробно отвечаем на ваши вопросы.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -672,6 +724,42 @@
                         <p class="service-description">От профессионального отбеливания до индивидуального преображения улыбки. Мы рады помочь подчеркнуть вашу естественную красоту!</p>
                         <a href="services.html#cosmetic" class="btn btn-outline-light">Полюбите улыбку</a>
                     </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">ЗУБНЫЕ ИМПЛАНТАТЫ</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Замените отсутствующие зубы постоянными имплантатами, которые выглядят и ощущаются естественно. Передовая технология остеоинтеграции.</p>
+                        <a href="services.html#implants" class="btn btn-outline-light">Восстановите улыбку</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 12 7.4l3.38 4.6L17 10.83 14.92 8H20v6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">ОБЩАЯ СТОМАТОЛОГИЯ</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Комплексная стоматологическая помощь, включая чистки, пломбы, лечение корневых каналов и профилактику для всей семьи.</p>
+                        <a href="services.html#general" class="btn btn-outline-light">Узнать больше</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83-3.45-1.13-6-4.82-6-8.83v-4.7l6-2.25 6 2.25v4.7zM9.01 14.33l-1.42-1.41L6 14.5 9.01 17.5 16 10.5l-1.42-1.42z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">ПРОФИЛАКТИЧЕСКИЙ УХОД</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Регулярные осмотры, профессиональная чистка и фторирование для поддержания здоровья вашей улыбки и предотвращения проблем.</p>
+                        <a href="services.html#preventive" class="btn btn-outline-light">Защитите улыбку</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -771,6 +859,125 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.3714767498647!2d37.61762931593065!3d55.75539998055638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrRgNC10LzQu9GM!5e0!3m2!1sru!2sru!4v1703849123456" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" title="Карта"></iframe>
                         </div>
                     </div>
+                </div>
+
+                <!-- Форма обратной связи -->
+                <div class="contact-form-section" style="margin-top: 4rem; background: linear-gradient(135deg, rgba(0, 122, 204, 0.03), rgba(135, 206, 235, 0.03)); padding: 3rem; border-radius: 1rem; position: relative; overflow: hidden;">
+                    <!-- Декоративные SVG формы -->
+                    <div class="floating-shape svg-float" style="position: absolute; top: 20px; right: 50px; opacity: 0.1;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="var(--color-primary)" stroke-width="2">
+                            <circle cx="40" cy="40" r="30"/>
+                            <circle cx="40" cy="40" r="20"/>
+                        </svg>
+                    </div>
+                    <div class="floating-shape svg-pulse" style="position: absolute; bottom: 30px; left: 40px; opacity: 0.1;">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="var(--color-accent)">
+                            <path d="M30 0L35 20H55L40 32L45 52L30 40L15 52L20 32L5 20H25L30 0Z"/>
+                        </svg>
+                    </div>
+
+                    <div style="text-align: center; margin-bottom: 2.5rem; position: relative; z-index: 1;">
+                        <span class="section-subtitle" style="color: var(--color-accent);">СВЯЖИТЕСЬ С НАМИ</span>
+                        <h3 style="font-size: 2rem; color: var(--color-primary); margin-top: 0.5rem; font-family: var(--font-primary);">Напишите нам</h3>
+                        <div class="title-underline centered" style="margin: 1rem auto;"></div>
+                        <p style="color: var(--color-gray-600); max-width: 600px; margin: 0 auto;">Есть вопросы о наших услугах? Заполните форму ниже, и мы свяжемся с вами в течение 24 часов.</p>
+                    </div>
+
+                    <form class="contact-form" style="max-width: 800px; margin: 0 auto; position: relative; z-index: 1;">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label for="contact-name" style="display: block; margin-bottom: 0.5rem; color: var(--color-primary); font-weight: 500; font-size: 0.9rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                    Полное имя *
+                                </label>
+                                <input type="text" id="contact-name" name="name" required
+                                    style="width: 100%; padding: 0.875rem 1rem; border: 2px solid rgba(0, 122, 204, 0.2); border-radius: 0.5rem; font-size: 1rem; transition: all 0.3s ease; background: white;"
+                                    onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(0, 122, 204, 0.1)'"
+                                    onblur="this.style.borderColor='rgba(0, 122, 204, 0.2)'; this.style.boxShadow='none'"
+                                    placeholder="Иван Иванов">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone" style="display: block; margin-bottom: 0.5rem; color: var(--color-primary); font-weight: 500; font-size: 0.9rem;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                    Номер телефона *
+                                </label>
+                                <input type="tel" id="contact-phone" name="phone" required
+                                    style="width: 100%; padding: 0.875rem 1rem; border: 2px solid rgba(0, 122, 204, 0.2); border-radius: 0.5rem; font-size: 1rem; transition: all 0.3s ease; background: white;"
+                                    onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(0, 122, 204, 0.1)'"
+                                    onblur="this.style.borderColor='rgba(0, 122, 204, 0.2)'; this.style.boxShadow='none'"
+                                    placeholder="+7 (495) 123-45-67">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="contact-email" style="display: block; margin-bottom: 0.5rem; color: var(--color-primary); font-weight: 500; font-size: 0.9rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                Email адрес *
+                            </label>
+                            <input type="email" id="contact-email" name="email" required
+                                style="width: 100%; padding: 0.875rem 1rem; border: 2px solid rgba(0, 122, 204, 0.2); border-radius: 0.5rem; font-size: 1rem; transition: all 0.3s ease; background: white;"
+                                onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(0, 122, 204, 0.1)'"
+                                onblur="this.style.borderColor='rgba(0, 122, 204, 0.2)'; this.style.boxShadow='none'"
+                                placeholder="ivan@example.com">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="contact-service" style="display: block; margin-bottom: 0.5rem; color: var(--color-primary); font-weight: 500; font-size: 0.9rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
+                                    <path d="M12 2C10.08 2 8.5 3.58 8.5 5.5c0 1.58 1.08 4.07 1.68 5.3.16.32.4.58.69.76l-.12 6.19c-.05 1.23.91 2.25 2.14 2.25h.22c1.23 0 2.19-1.02 2.14-2.25l-.12-6.19c.29-.18.53-.44.69-.76.6-1.23 1.68-3.72 1.68-5.3C15.5 3.58 13.92 2 12 2zm0 2c1.1 0 2 .9 2 2 0 .74-.5 2.1-1 3.23V14h-2V9.23C10.5 8.1 10 6.74 10 6c0-1.1.9-2 2-2z"/>
+                                </svg>
+                                Интересующая услуга
+                            </label>
+                            <select id="contact-service" name="service"
+                                style="width: 100%; padding: 0.875rem 1rem; border: 2px solid rgba(0, 122, 204, 0.2); border-radius: 0.5rem; font-size: 1rem; transition: all 0.3s ease; background: white; cursor: pointer;"
+                                onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(0, 122, 204, 0.1)'"
+                                onblur="this.style.borderColor='rgba(0, 122, 204, 0.2)'; this.style.boxShadow='none'">
+                                <option value="">Выберите услугу...</option>
+                                <option value="emergency">Экстренная стоматология</option>
+                                <option value="aligners">Элайнеры</option>
+                                <option value="cosmetic">Косметическая стоматология</option>
+                                <option value="implants">Зубные имплантаты</option>
+                                <option value="general">Общая стоматология</option>
+                                <option value="preventive">Профилактический уход</option>
+                                <option value="whitening">Отбеливание зубов</option>
+                                <option value="veneers">Виниры</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="contact-message" style="display: block; margin-bottom: 0.5rem; color: var(--color-primary); font-weight: 500; font-size: 0.9rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 0.5rem;">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                Сообщение *
+                            </label>
+                            <textarea id="contact-message" name="message" rows="5" required
+                                style="width: 100%; padding: 0.875rem 1rem; border: 2px solid rgba(0, 122, 204, 0.2); border-radius: 0.5rem; font-size: 1rem; transition: all 0.3s ease; background: white; font-family: inherit; resize: vertical;"
+                                onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(0, 122, 204, 0.1)'"
+                                onblur="this.style.borderColor='rgba(0, 122, 204, 0.2)'; this.style.boxShadow='none'"
+                                placeholder="Расскажите нам о ваших стоматологических потребностях или задайте вопросы..."></textarea>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer; color: var(--color-gray-600); font-size: 0.9rem;">
+                                <input type="checkbox" name="newsletter" style="margin-right: 0.5rem; width: 18px; height: 18px; cursor: pointer;">
+                                Подписаться на рассылку с советами и специальными предложениями
+                            </label>
+                            <button type="submit" class="btn btn-primary shine-sweep" style="min-width: 200px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                </svg>
+                                Отправить
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>

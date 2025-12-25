@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Dentist in Alexandria, VA - Premium dental care with state-of-the-art technology. Cosmetic dentistry, implants, Invisalign, emergency services. Call (703) 555-0123.">
+    <meta name="keywords" content="dentist alexandria va, dental care alexandria, cosmetic dentistry, teeth whitening, dental implants, invisalign alexandria, emergency dentist, best dentist alexandria">
+    <meta name="author" content="Dentist in Alexandria">
+    <title>Dentist in Alexandria | Premium Dental Care | Book Appointment Today</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dentistalexandria.com/">
+    <meta property="og:title" content="Dentist in Alexandria | Premium Dental Care">
+    <meta property="og:description" content="Experience world-class dental care in Alexandria, VA. Advanced technology, compassionate care, beautiful smiles.">
+    <meta property="og:image" content="https://dentistalexandria.com/images/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dentistalexandria.com/">
+    <meta property="twitter:title" content="Dentist in Alexandria | Premium Dental Care">
+    <meta property="twitter:description" content="Experience world-class dental care in Alexandria, VA.">
+    <meta property="twitter:image" content="https://dentistalexandria.com/images/twitter-image.jpg">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Dentist in Alexandria",
+        "description": "Premier dental practice in Alexandria, VA offering comprehensive dental care with advanced technology",
+        "url": "https://dentistalexandria.com",
+        "telephone": "+1-703-555-0123",
+        "email": "info@dentistalexandria.com",
+        "priceRange": "$$-$$$",
+        "image": "https://dentistalexandria.com/images/practice.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6000 Stevenson Avenue, Suite 103",
+            "addressLocality": "Alexandria",
+            "addressRegion": "VA",
+            "postalCode": "22304",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "38.8048",
+            "longitude": "-77.0469"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Friday",
+                "opens": "09:00",
+                "closes": "17:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "347",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "sameAs": [
+            "https://www.facebook.com/dentistalexandria",
+            "https://www.instagram.com/dentistalexandria",
+            "https://www.linkedin.com/company/dentistalexandria"
+        ]
+    }
+    </script>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1B3A5D;
+            --accent-color: #C5A572;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+        }
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Three.js Canvas */
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Content Container */
+        #content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .phone {
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #b39563;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(197, 165, 114, 0.3);
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .lang-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 200vh;
+            position: relative;
+        }
+
+        .hero-content {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero-text {
+            max-width: 900px;
+            color: var(--white);
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-hero-primary {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-hero-primary:hover {
+            background: #b39563;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(197, 165, 114, 0.4);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border-color: var(--white);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-hero-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Contact Form Floating */
+        .floating-contact-form {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            transform: translateY(calc(100% + 2rem));
+            transition: transform 0.4s ease;
+        }
+
+        .floating-contact-form.visible {
+            transform: translateY(0);
+        }
+
+        .form-toggle-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: var(--accent-color);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(197, 165, 114, 0.4);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .form-toggle-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(197, 165, 114, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background: var(--white);
+        }
+
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .welcome-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .welcome-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .welcome-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Form Styles */
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* Team Section */
+        .team-section {
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-rating {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 968px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-contact {
+                display: none;
+            }
+        }
+
+        /* Accessibility */
+        .accessibility-panel {
+            position: fixed;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%) translateX(350px);
+            z-index: 999;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .accessibility-panel.active {
+            transform: translateY(-50%) translateX(0);
+        }
+
+        .accessibility-btn {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            z-index: 999;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .accessibility-btn:hover {
+            background: var(--accent-color);
+            padding-right: 1.5rem;
+        }
+
+        .accessibility-panel h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .accessibility-option {
+            margin-bottom: 1.5rem;
+        }
+
+        .accessibility-option label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .accessibility-option button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-light);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .accessibility-option button:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .accessibility-option button.active {
+            background: var(--accent-color);
+            color: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        /* Accessibility modes */
+        body.font-large {
+            font-size: 120%;
+        }
+
+        body.font-xlarge {
+            font-size: 140%;
+        }
+
+        body.high-contrast {
+            filter: contrast(1.5);
+        }
+
+        body.dark-mode {
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        body.dark-mode img {
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        .close-accessibility {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Canvas for Three.js -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Accessibility Button -->
+    <button class="accessibility-btn" onclick="toggleAccessibility()" title="Accessibility Settings" aria-label="Open Accessibility Panel">
+        ♿
+    </button>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel" id="accessibility-panel">
+        <button class="close-accessibility" onclick="toggleAccessibility()" aria-label="Close Accessibility Panel">×</button>
+        <h3>Accessibility Options</h3>
+
+        <div class="accessibility-option">
+            <label>Font Size</label>
+            <button onclick="setFontSize('normal')" id="font-normal">Normal</button>
+            <button onclick="setFontSize('large')" id="font-large" style="margin-top: 0.5rem;">Large</button>
+            <button onclick="setFontSize('xlarge')" id="font-xlarge" style="margin-top: 0.5rem;">Extra Large</button>
+        </div>
+
+        <div class="accessibility-option">
+            <label>Display Mode</label>
+            <button onclick="toggleHighContrast()" id="contrast-btn">High Contrast</button>
+            <button onclick="toggleDarkMode()" id="dark-mode-btn" style="margin-top: 0.5rem;">Dark Mode</button>
+        </div>
+
+        <div class="accessibility-option">
+            <label>Quick Actions</label>
+            <button onclick="resetAccessibility()">Reset All Settings</button>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+            <p style="font-size: 0.85rem; color: var(--text-light);">
+                Need help? Call us at<br>
+                <strong style="color: var(--primary-color);">(703) 555-0123</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper">
+        <!-- Header -->
+        <header id="main-header">
+            <div class="header-container">
+                <a href="index-new.html" class="logo">Dentist in Alexandria</a>
+
+                <nav>
+                    <a href="#welcome">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#team">Our Team</a>
+                    <a href="#testimonials">Reviews</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+                <div class="header-contact">
+                    <a href="tel:+17035550123" class="phone">📞 (703) 555-0123</a>
+                    <a href="#appointment" class="btn-primary">Book Appointment</a>
+                    <div class="language-switcher">
+                        <a href="index-new-ru.html" class="lang-link">RU</a>
+                        <span>|</span>
+                        <a href="index-new.html" class="lang-link active">EN</a>
+                    </div>
+                </div>
+
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </header>
+
+        <!-- Hero Section with Scroll Effect -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Smile is Our Priority</h1>
+                    <p>Experience world-class dental care with state-of-the-art technology and compassionate professionals in Alexandria, VA</p>
+                    <div class="hero-cta">
+                        <a href="#appointment" class="btn-hero btn-hero-primary">Book Your Appointment</a>
+                        <a href="#services" class="btn-hero btn-hero-secondary">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Section -->
+        <section id="welcome" class="welcome-section">
+            <div class="section-container">
+                <div class="welcome-grid">
+                    <div class="welcome-content">
+                        <h2>Welcome to Dentist in Alexandria</h2>
+                        <p>For over 20 years, we've been providing exceptional dental care to families in Alexandria and surrounding communities. Our commitment to excellence, combined with cutting-edge technology and a patient-first approach, makes us the trusted choice for your dental health.</p>
+                        <p>From routine cleanings to complex cosmetic procedures, our experienced team is dedicated to helping you achieve and maintain a healthy, beautiful smile that lasts a lifetime.</p>
+                        <a href="#appointment" class="btn-primary">Schedule a Consultation</a>
+                    </div>
+                    <div class="welcome-image">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800" alt="Modern dental office">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="section-container">
+                <h2 class="section-title">Comprehensive Dental Services</h2>
+                <p class="section-subtitle">From preventive care to advanced cosmetic procedures, we offer everything you need for optimal oral health</p>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🦷</div>
+                        <h3>General Dentistry</h3>
+                        <p>Comprehensive exams, cleanings, fillings, and preventive care to keep your smile healthy.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>Cosmetic Dentistry</h3>
+                        <p>Teeth whitening, veneers, and smile makeovers to give you the confidence you deserve.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🦴</div>
+                        <h3>Dental Implants</h3>
+                        <p>Permanent tooth replacement solutions that look, feel, and function like natural teeth.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">😁</div>
+                        <h3>Invisalign®</h3>
+                        <p>Straighten your teeth discreetly with clear aligners, no metal braces required.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🚨</div>
+                        <h3>Emergency Dental Care</h3>
+                        <p>Same-day appointments available for dental emergencies. We're here when you need us.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">👨‍👩‍👧</div>
+                        <h3>Family Dentistry</h3>
+                        <p>Comprehensive care for patients of all ages, from children to seniors.</p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team-section">
+            <div class="section-container">
+                <h2 class="section-title">Meet Our Expert Team</h2>
+                <p class="section-subtitle">Experienced professionals dedicated to your dental health and comfort</p>
+
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400" alt="Dr. Sarah Johnson">
+                        </div>
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="team-role">Lead Dentist, DDS</p>
+                        <p class="team-bio">With over 15 years of experience, Dr. Johnson specializes in cosmetic and restorative dentistry.</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400" alt="Dr. Michael Chen">
+                        </div>
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="team-role">Orthodontist, DDS, MS</p>
+                        <p class="team-bio">Board-certified orthodontist specializing in Invisalign and advanced alignment techniques.</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400" alt="Dr. Emily Rodriguez">
+                        </div>
+                        <h3>Dr. Emily Rodriguez</h3>
+                        <p class="team-role">Periodontist, DDS</p>
+                        <p class="team-bio">Expert in gum health and dental implants with a gentle, patient-centered approach.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="section-container">
+                <h2 class="section-title">What Our Patients Say</h2>
+                <p class="section-subtitle">Real reviews from real patients</p>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Best dental experience I've ever had! The staff is incredibly professional and caring. Dr. Johnson transformed my smile with veneers and I couldn't be happier."</p>
+                        <p class="testimonial-author">— Jennifer M.</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"I was terrified of dentists until I found this practice. They made me feel comfortable and explained everything. My Invisalign treatment exceeded all expectations!"</p>
+                        <p class="testimonial-author">— Robert K.</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The most modern dental office in Alexandria! State-of-the-art equipment and exceptional care. They really care about their patients' comfort and health."</p>
+                        <p class="testimonial-author">— Maria S.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Sets Us Apart Section -->
+        <section id="what-sets-us-apart" class="welcome-section">
+            <div class="section-container">
+                <h2 class="section-title">What Sets Us Apart</h2>
+                <p class="section-subtitle">Experience the difference of personalized, technology-driven dental care</p>
+
+                <div class="welcome-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔬</div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Advanced Technology</h3>
+                        <p style="color: var(--text-light);">State-of-the-art 3D imaging, laser dentistry, and digital smile design for precise, comfortable treatment.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">💎</div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Premium Care</h3>
+                        <p style="color: var(--text-light);">Netflix-enabled treatment rooms, spa-like amenities, and personalized attention in every visit.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">⏰</div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Flexible Scheduling</h3>
+                        <p style="color: var(--text-light);">Evening and weekend appointments available. Same-day emergency care when you need it most.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">💰</div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Flexible Payment</h3>
+                        <p style="color: var(--text-light);">Multiple insurance plans accepted. Interest-free financing and in-house membership plans available.</p>
+                    </div>
+                </div>
+
+                <div class="welcome-grid">
+                    <div class="welcome-image">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800" alt="Modern dental technology">
+                    </div>
+
+                    <div class="contact-form" style="background: var(--bg-light); padding: 2.5rem; border-radius: 20px;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Book a Free Consultation</h3>
+                        <p style="margin-bottom: 2rem; color: var(--text-light);">Learn more about how our advanced care can benefit you</p>
+                        <form id="consultation-form">
+                            <div class="form-group">
+                                <label for="consult-name">Full Name *</label>
+                                <input type="text" id="consult-name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="consult-phone">Phone *</label>
+                                <input type="tel" id="consult-phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="consult-email">Email *</label>
+                                <input type="email" id="consult-email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="consult-date">Preferred Date</label>
+                                <input type="date" id="consult-date" name="date">
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">Request Free Consultation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patient Information Section -->
+        <section id="patient-info" class="services-section">
+            <div class="section-container">
+                <h2 class="section-title">New Patient Information</h2>
+                <p class="section-subtitle">Everything you need to know for your first visit</p>
+
+                <div class="services-grid" style="margin-bottom: 4rem;">
+                    <div class="service-card">
+                        <div class="service-icon">📋</div>
+                        <h3>Patient Forms</h3>
+                        <p>Save time by completing your new patient forms online before your first visit.</p>
+                        <a href="#" class="service-link">Download Forms →</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🏥</div>
+                        <h3>Insurance & Billing</h3>
+                        <p>We accept most major insurance plans and offer flexible payment options.</p>
+                        <a href="#" class="service-link">View Plans →</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🎁</div>
+                        <h3>Special Offers</h3>
+                        <p>New patient specials and seasonal promotions to help you save on dental care.</p>
+                        <a href="#" class="service-link">See Offers →</a>
+                    </div>
+                </div>
+
+                <div class="welcome-grid">
+                    <div class="welcome-content">
+                        <h3>What to Expect</h3>
+                        <p><strong>Your First Visit:</strong></p>
+                        <ul style="line-height: 2; color: var(--text-light); margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li>Comprehensive oral examination</li>
+                            <li>Digital x-rays (as needed)</li>
+                            <li>Oral cancer screening</li>
+                            <li>Professional cleaning</li>
+                            <li>Personalized treatment plan</li>
+                            <li>Insurance benefit review</li>
+                        </ul>
+                        <p>Please bring your insurance card and photo ID. Arrive 15 minutes early to complete any remaining paperwork.</p>
+                    </div>
+
+                    <div class="contact-form" style="background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">New Patient Registration</h3>
+                        <p style="margin-bottom: 2rem; color: var(--text-light);">Register now and we'll prepare everything for your visit</p>
+                        <form id="new-patient-form">
+                            <div class="form-group">
+                                <label for="patient-name">Full Name *</label>
+                                <input type="text" id="patient-name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="patient-dob">Date of Birth *</label>
+                                <input type="date" id="patient-dob" name="dob" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="patient-phone">Phone *</label>
+                                <input type="tel" id="patient-phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="patient-email">Email *</label>
+                                <input type="email" id="patient-email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="patient-insurance">Insurance Provider</label>
+                                <input type="text" id="patient-insurance" name="insurance" placeholder="e.g., Delta Dental, Aetna">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="patient-reason">Reason for Visit</label>
+                                <select id="patient-reason" name="reason">
+                                    <option value="">Select one</option>
+                                    <option value="checkup">Routine Checkup</option>
+                                    <option value="cleaning">Cleaning</option>
+                                    <option value="pain">Tooth Pain</option>
+                                    <option value="cosmetic">Cosmetic Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">Complete Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Care CTA Section -->
+        <section style="background: linear-gradient(135deg, var(--primary-color), #2a5a8a); padding: 4rem 2rem; text-align: center;">
+            <div class="section-container">
+                <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 1rem;">Dental Emergency?</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">We offer same-day emergency appointments. Don't wait - call us now or fill out the urgent care form below.</p>
+
+                <div class="welcome-grid" style="max-width: 900px; margin: 0 auto; align-items: center;">
+                    <div style="text-align: center;">
+                        <a href="tel:+17035550123" style="display: inline-block; background: var(--accent-color); color: var(--white); padding: 1.5rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.3rem; margin-bottom: 1rem;">📞 Call Now: (703) 555-0123</a>
+                        <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">Available 7 Days a Week</p>
+                    </div>
+
+                    <div class="contact-form" style="background: var(--white); padding: 2rem; border-radius: 20px;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Urgent Care Request</h3>
+                        <form id="emergency-form">
+                            <div class="form-group">
+                                <label for="emergency-name">Name *</label>
+                                <input type="text" id="emergency-name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emergency-phone">Phone *</label>
+                                <input type="tel" id="emergency-phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emergency-issue">Describe Your Emergency *</label>
+                                <textarea id="emergency-issue" name="issue" rows="3" required placeholder="e.g., severe tooth pain, broken tooth, etc."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%; background: #dc3545;">Request Emergency Care</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financing Options Section with Form -->
+        <section class="welcome-section" style="background: var(--bg-light);">
+            <div class="section-container">
+                <h2 class="section-title">Flexible Financing Options</h2>
+                <p class="section-subtitle">Quality dental care should be accessible to everyone</p>
+
+                <div class="welcome-grid">
+                    <div class="welcome-content">
+                        <h3>We Make Treatment Affordable</h3>
+                        <p><strong>Payment Options Include:</strong></p>
+                        <ul style="line-height: 2; color: var(--text-light); margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li>Most PPO insurance plans accepted</li>
+                            <li>CareCredit financing (0% interest available)</li>
+                            <li>In-house membership plan ($299/year)</li>
+                            <li>Flexible payment plans</li>
+                            <li>HSA/FSA accepted</li>
+                        </ul>
+                        <p><strong>Membership Plan Includes:</strong></p>
+                        <ul style="line-height: 2; color: var(--text-light); margin-left: 1.5rem;">
+                            <li>2 cleanings & exams per year</li>
+                            <li>All necessary x-rays</li>
+                            <li>20% discount on all treatments</li>
+                            <li>No insurance hassles</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-form" style="background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Apply for Financing</h3>
+                        <p style="margin-bottom: 2rem; color: var(--text-light);">Get pre-approved in minutes</p>
+                        <form id="financing-form">
+                            <div class="form-group">
+                                <label for="finance-name">Full Name *</label>
+                                <input type="text" id="finance-name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="finance-phone">Phone *</label>
+                                <input type="tel" id="finance-phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="finance-email">Email *</label>
+                                <input type="email" id="finance-email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="finance-amount">Estimated Treatment Cost</label>
+                                <select id="finance-amount" name="amount">
+                                    <option value="">Select range</option>
+                                    <option value="1000">$500 - $1,000</option>
+                                    <option value="2500">$1,000 - $2,500</option>
+                                    <option value="5000">$2,500 - $5,000</option>
+                                    <option value="10000">$5,000 - $10,000</option>
+                                    <option value="more">$10,000+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="finance-option">Interested In</label>
+                                <select id="finance-option" name="option">
+                                    <option value="">Select one</option>
+                                    <option value="carecredit">CareCredit Financing</option>
+                                    <option value="membership">Membership Plan</option>
+                                    <option value="payment">Payment Plan</option>
+                                    <option value="insurance">Insurance Information</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">Get Financing Information</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="welcome-section">
+            <div class="section-container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to schedule your appointment? Contact us today!</p>
+
+                <div class="welcome-grid">
+                    <div class="welcome-content">
+                        <h3>Visit Us</h3>
+                        <p><strong>Address:</strong><br>6000 Stevenson Avenue, Suite 103<br>Alexandria, VA 22304</p>
+                        <p><strong>Phone:</strong><br>(703) 555-0123</p>
+                        <p><strong>Email:</strong><br>info@dentistalexandria.com</p>
+                        <p><strong>Hours:</strong><br>Mon-Thu: 9:00 AM - 6:00 PM<br>Fri: 9:00 AM - 5:00 PM<br>Sat: 10:00 AM - 2:00 PM</p>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="appointment-form">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Service Interested In</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="general">General Dentistry</option>
+                                    <option value="cosmetic">Cosmetic Dentistry</option>
+                                    <option value="implants">Dental Implants</option>
+                                    <option value="invisalign">Invisalign</option>
+                                    <option value="emergency">Emergency Care</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">Request Appointment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Map -->
+        <section id="map" style="padding: 0;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.9449392384896!2d-77.04912!3d38.80480!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDQ4JzE3LjMiTiA3N8KwMDInNTYuOCJX!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Dentist in Alexandria</h3>
+                        <p>Premium dental care for your whole family. Experience the difference that personalized, compassionate dentistry can make.</p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook">📘</a>
+                            <a href="#" aria-label="Instagram">📷</a>
+                            <a href="#" aria-label="LinkedIn">💼</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <p><a href="#welcome">About Us</a></p>
+                        <p><a href="#services">Services</a></p>
+                        <p><a href="#team">Our Team</a></p>
+                        <p><a href="#testimonials">Reviews</a></p>
+                        <p><a href="#contact">Contact</a></p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <p><a href="#">General Dentistry</a></p>
+                        <p><a href="#">Cosmetic Dentistry</a></p>
+                        <p><a href="#">Dental Implants</a></p>
+                        <p><a href="#">Invisalign</a></p>
+                        <p><a href="#">Emergency Care</a></p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Contact Info</h3>
+                        <p>6000 Stevenson Avenue, Suite 103<br>Alexandria, VA 22304</p>
+                        <p>Phone: (703) 555-0123</p>
+                        <p>Email: info@dentistalexandria.com</p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Dentist in Alexandria. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Contact Form Button -->
+    <button class="form-toggle-btn" onclick="toggleFloatingForm()" title="Quick Contact">📧</button>
+
+    <div class="floating-contact-form" id="floating-form">
+        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Quick Contact</h3>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="quick-name">Name *</label>
+                <input type="text" id="quick-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quick-phone">Phone *</label>
+                <input type="tel" id="quick-phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quick-message">Message</label>
+                <textarea id="quick-message" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Three.js + Lenis + GSAP Script -->
+    <script>
+        // ==================== LENIS SMOOTH SCROLL ====================
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 2
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // ==================== THREE.JS SETUP ====================
+        const canvas = document.getElementById('webgl-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: true,
+            alpha: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // ==================== SHADER MATERIAL ====================
+        const vertexShader = `
+            uniform float uScrollSpeed;
+            varying vec2 vUv;
+
+            void main() {
+                vUv = uv;
+                vec3 pos = position;
+
+                // Distort based on scroll speed
+                float distortion = sin(uv.y * 3.14159) * uScrollSpeed * 0.5;
+                pos.z += distortion;
+
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+            }
+        `;
+
+        const fragmentShader = `
+            uniform sampler2D uTexture;
+            uniform float uScrollSpeed;
+            varying vec2 vUv;
+
+            void main() {
+                // Distort UV coordinates based on scroll speed
+                vec2 uv = vUv;
+                float distortion = sin(uv.y * 6.28318) * uScrollSpeed * 0.05;
+                uv.x += distortion;
+
+                vec4 color = texture2D(uTexture, uv);
+                gl_FragColor = color;
+            }
+        `;
+
+        // Create texture loader
+        const textureLoader = new THREE.TextureLoader();
+
+        // Array of image URLs for slider
+        const imageUrls = [
+            'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200',
+            'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200',
+            'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200',
+            'https://images.unsplash.com/photo-1598256989800-fe5f95a3b0a0?w=1200',
+            'https://images.unsplash.com/photo-1609840113808-59e5c5f4d1bb?w=1200',
+            'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1200'
+        ];
+
+        let currentTextureIndex = 0;
+        const textures = [];
+
+        // Preload all textures
+        imageUrls.forEach((url, index) => {
+            textureLoader.load(url, (texture) => {
+                textures[index] = texture;
+                if (index === 0) {
+                    uniforms.uTexture.value = texture;
+                }
+            });
+        });
+
+        // Create uniforms
+        const uniforms = {
+            uTexture: { value: null },
+            uScrollSpeed: { value: 0 }
+        };
+
+        // Create plane geometry (16:9 aspect ratio)
+        const geometry = new THREE.PlaneGeometry(8, 4.5, 32, 32);
+        const material = new THREE.ShaderMaterial({
+            vertexShader: vertexShader,
+            fragmentShader: fragmentShader,
+            uniforms: uniforms,
+            side: THREE.DoubleSide
+        });
+
+        const plane = new THREE.Mesh(geometry, material);
+        scene.add(plane);
+
+        // ==================== SCROLL VELOCITY TRACKING ====================
+        let scrollVelocity = 0;
+        let lastScrollY = window.scrollY;
+
+        lenis.on('scroll', ({ scroll, velocity }) => {
+            scrollVelocity = velocity * 0.001; // Normalize velocity
+        });
+
+        // ==================== ANIMATION LOOP ====================
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Smooth decay of scroll velocity
+            uniforms.uScrollSpeed.value = scrollVelocity;
+            scrollVelocity *= 0.9; // Decay
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // ==================== IMAGE SLIDER ====================
+        let sliderInterval = setInterval(() => {
+            currentTextureIndex = (currentTextureIndex + 1) % textures.length;
+            if (textures[currentTextureIndex]) {
+                gsap.to(uniforms.uTexture, {
+                    value: textures[currentTextureIndex],
+                    duration: 1,
+                    ease: 'power2.inOut'
+                });
+            }
+        }, 4000); // Change image every 4 seconds
+
+        // ==================== RESPONSIVE ====================
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ==================== HEADER SCROLL EFFECT ====================
+        const header = document.getElementById('main-header');
+
+        lenis.on('scroll', ({ scroll }) => {
+            if (scroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ==================== GSAP ANIMATIONS ====================
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate sections on scroll
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section.querySelectorAll('.section-title, .section-subtitle'), {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'top 50%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                stagger: 0.2
+            });
+        });
+
+        // Animate service cards
+        gsap.from('.service-card', {
+            scrollTrigger: {
+                trigger: '.services-grid',
+                start: 'top 70%'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.15
+        });
+
+        // Animate team members
+        gsap.from('.team-member', {
+            scrollTrigger: {
+                trigger: '.team-grid',
+                start: 'top 70%'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.2
+        });
+
+        // Animate testimonials
+        gsap.from('.testimonial-card', {
+            scrollTrigger: {
+                trigger: '.testimonials-grid',
+                start: 'top 70%'
+            },
+            opacity: 0,
+            scale: 0.9,
+            duration: 0.8,
+            stagger: 0.15
+        });
+
+        // ==================== FLOATING FORM ====================
+        function toggleFloatingForm() {
+            const form = document.getElementById('floating-form');
+            form.classList.toggle('visible');
+        }
+
+        // Show floating form after scrolling
+        let formShown = false;
+        lenis.on('scroll', ({ scroll }) => {
+            if (scroll > 500 && !formShown) {
+                formShown = true;
+                // Could auto-show form here if desired
+            }
+        });
+
+        // ==================== FORM SUBMISSIONS ====================
+        // Main appointment form
+        document.getElementById('appointment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! We will contact you shortly to confirm your appointment.');
+            e.target.reset();
+        });
+
+        // Consultation form
+        document.getElementById('consultation-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for requesting a free consultation! Our team will contact you within 24 hours.');
+            e.target.reset();
+        });
+
+        // New patient registration form
+        document.getElementById('new-patient-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for registering! We\'ve sent you a confirmation email with next steps.');
+            e.target.reset();
+        });
+
+        // Emergency care form
+        document.getElementById('emergency-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Your urgent care request has been received! We will call you immediately at the number provided.');
+            e.target.reset();
+        });
+
+        // Financing form
+        document.getElementById('financing-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! A financing specialist will contact you within 1 business day with options.');
+            e.target.reset();
+        });
+
+        // ==================== ACCESSIBILITY ====================
+        function toggleAccessibility() {
+            const panel = document.getElementById('accessibility-panel');
+            panel.classList.toggle('active');
+        }
+
+        function setFontSize(size) {
+            // Remove all font size classes
+            document.body.classList.remove('font-large', 'font-xlarge');
+
+            // Remove active from all font buttons
+            document.querySelectorAll('[id^="font-"]').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Apply selected size
+            if (size === 'large') {
+                document.body.classList.add('font-large');
+                document.getElementById('font-large').classList.add('active');
+            } else if (size === 'xlarge') {
+                document.body.classList.add('font-xlarge');
+                document.getElementById('font-xlarge').classList.add('active');
+            } else {
+                document.getElementById('font-normal').classList.add('active');
+            }
+
+            // Save preference
+            localStorage.setItem('fontSize', size);
+        }
+
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            document.getElementById('contrast-btn').classList.toggle('active');
+
+            // Save preference
+            const isActive = document.body.classList.contains('high-contrast');
+            localStorage.setItem('highContrast', isActive);
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.getElementById('dark-mode-btn').classList.toggle('active');
+
+            // Save preference
+            const isActive = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isActive);
+        }
+
+        function resetAccessibility() {
+            // Remove all classes
+            document.body.classList.remove('font-large', 'font-xlarge', 'high-contrast', 'dark-mode');
+
+            // Remove active from all buttons
+            document.querySelectorAll('.accessibility-option button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Set normal as active
+            document.getElementById('font-normal').classList.add('active');
+
+            // Clear localStorage
+            localStorage.removeItem('fontSize');
+            localStorage.removeItem('highContrast');
+            localStorage.removeItem('darkMode');
+        }
+
+        // Load saved preferences on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Load font size
+            const savedFontSize = localStorage.getItem('fontSize');
+            if (savedFontSize) {
+                setFontSize(savedFontSize);
+            } else {
+                document.getElementById('font-normal').classList.add('active');
+            }
+
+            // Load high contrast
+            const savedHighContrast = localStorage.getItem('highContrast');
+            if (savedHighContrast === 'true') {
+                document.body.classList.add('high-contrast');
+                document.getElementById('contrast-btn').classList.add('active');
+            }
+
+            // Load dark mode
+            const savedDarkMode = localStorage.getItem('darkMode');
+            if (savedDarkMode === 'true') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('dark-mode-btn').classList.add('active');
+            }
+        });
+
+        // ==================== SMOOTH SCROLL LINKS ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    lenis.scrollTo(target, {
+                        offset: -100,
+                        duration: 1.5
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

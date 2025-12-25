@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Distortion Effects - Lusion Style</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Three.js Canvas - Fixed overlay */
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Content wrapper */
+        .content {
+            position: relative;
+            z-index: 2;
+            pointer-events: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: #999;
+            margin-bottom: 2rem;
+        }
+
+        /* Image Sections */
+        .image-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: #111;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Text Sections */
+        .text-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem;
+        }
+
+        .text-content {
+            max-width: 800px;
+        }
+
+        .text-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .text-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #aaa;
+        }
+
+        /* Loading screen */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #333;
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll progress indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #111;
+            z-index: 1000;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #007ACC, #87CEEB);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Three.js Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Scroll Distortion</h1>
+                <p>Experience smooth scroll with GLSL shader effects</p>
+            </div>
+        </section>
+
+        <!-- Image Section 1 -->
+        <section class="image-section">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1920&q=80" alt="Dental Office" class="distortion-image" data-speed="0.5">
+            </div>
+        </section>
+
+        <!-- Text Section -->
+        <section class="text-section">
+            <div class="text-content">
+                <h2>Advanced Technology</h2>
+                <p>We use cutting-edge dental technology to provide the best possible care for our patients. Our state-of-the-art equipment ensures precision and comfort.</p>
+            </div>
+        </section>
+
+        <!-- Image Section 2 -->
+        <section class="image-section">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=80" alt="Modern Clinic" class="distortion-image" data-speed="0.3">
+            </div>
+        </section>
+
+        <!-- Text Section -->
+        <section class="text-section">
+            <div class="text-content">
+                <h2>Patient Experience</h2>
+                <p>Your comfort and satisfaction are our top priorities. We create a welcoming environment where you feel relaxed and cared for.</p>
+            </div>
+        </section>
+
+        <!-- Image Section 3 -->
+        <section class="image-section">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80" alt="Dental Treatment" class="distortion-image" data-speed="0.7">
+            </div>
+        </section>
+
+        <!-- Final Section -->
+        <section class="text-section" style="min-height: 100vh;">
+            <div class="text-content">
+                <h2>Book Your Appointment</h2>
+                <p>Ready to transform your smile? Schedule a consultation with our expert team today.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+        // ============================================
+        // VERTEX SHADER
+        // ============================================
+        const vertexShader = `
+            varying vec2 vUv;
+            uniform float uScrollSpeed;
+            uniform float uTime;
+
+            void main() {
+                vUv = uv;
+
+                vec3 pos = position;
+
+                // Wave distortion based on scroll speed
+                float distortion = sin(pos.y * 3.0 + uTime * 0.5) * uScrollSpeed * 0.3;
+                pos.x += distortion;
+
+                // Vertical stretch effect
+                pos.y += uScrollSpeed * pos.y * 0.5;
+
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+            }
+        `;
+
+        // ============================================
+        // FRAGMENT SHADER
+        // ============================================
+        const fragmentShader = `
+            uniform sampler2D uTexture;
+            uniform float uScrollSpeed;
+            uniform float uTime;
+            varying vec2 vUv;
+
+            void main() {
+                vec2 uv = vUv;
+
+                // RGB split effect based on scroll speed
+                float offset = uScrollSpeed * 0.02;
+
+                float r = texture2D(uTexture, uv + vec2(offset, 0.0)).r;
+                float g = texture2D(uTexture, uv).g;
+                float b = texture2D(uTexture, uv - vec2(offset, 0.0)).b;
+
+                // Wave distortion in UV
+                uv.x += sin(uv.y * 10.0 + uTime) * uScrollSpeed * 0.01;
+                uv.y += cos(uv.x * 10.0 + uTime) * uScrollSpeed * 0.01;
+
+                vec4 color = vec4(r, g, b, 1.0);
+
+                // Vignette effect
+                float dist = distance(vUv, vec2(0.5));
+                color.rgb *= 1.0 - dist * 0.3;
+
+                gl_FragColor = color;
+            }
+        `;
+
+        // ============================================
+        // SCENE SETUP
+        // ============================================
+        let scene, camera, renderer, plane, material;
+        let scrollSpeed = 0;
+        let targetScrollSpeed = 0;
+        let time = 0;
+
+        function init() {
+            // Scene
+            scene = new THREE.Scene();
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+            camera.position.z = 5;
+
+            // Renderer
+            const canvas = document.getElementById('webgl-canvas');
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                alpha: true,
+                antialias: true
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Texture
+            const textureLoader = new THREE.TextureLoader();
+            const texture = textureLoader.load(
+                'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1920&q=80',
+                () => {
+                    // Hide loading screen when texture is loaded
+                    document.getElementById('loading').classList.add('hidden');
+                }
+            );
+
+            // Geometry
+            const geometry = new THREE.PlaneGeometry(8, 4.5, 32, 32);
+
+            // Material with custom shaders
+            material = new THREE.ShaderMaterial({
+                uniforms: {
+                    uTexture: { value: texture },
+                    uScrollSpeed: { value: 0 },
+                    uTime: { value: 0 }
+                },
+                vertexShader: vertexShader,
+                fragmentShader: fragmentShader,
+                side: THREE.DoubleSide
+            });
+
+            // Mesh
+            plane = new THREE.Mesh(geometry, material);
+            scene.add(plane);
+
+            // Resize listener
+            window.addEventListener('resize', onResize);
+        }
+
+        function onResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // ============================================
+        // LENIS SMOOTH SCROLL
+        // ============================================
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        // Scroll event
+        lenis.on('scroll', (e) => {
+            targetScrollSpeed = Math.abs(e.velocity) * 0.1;
+
+            // Update progress bar
+            const progress = (e.scroll / (e.limit)) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // ============================================
+        // GSAP SCROLLTRIGGER
+        // ============================================
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Smooth scroll speed interpolation
+        gsap.ticker.add(() => {
+            scrollSpeed += (targetScrollSpeed - scrollSpeed) * 0.1;
+            targetScrollSpeed *= 0.95; // Decay
+        });
+
+        // Animate images on scroll
+        gsap.utils.toArray('.image-container').forEach((container, i) => {
+            const img = container.querySelector('img');
+
+            gsap.fromTo(img,
+                {
+                    scale: 1.2,
+                    y: -50
+                },
+                {
+                    scale: 1,
+                    y: 50,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: container,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                }
+            );
+        });
+
+        // Animate text sections
+        gsap.utils.toArray('.text-content').forEach((content) => {
+            gsap.fromTo(content,
+                {
+                    opacity: 0,
+                    y: 100
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: content,
+                        start: 'top 80%',
+                        end: 'top 50%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+
+        // ============================================
+        // ANIMATION LOOP
+        // ============================================
+        function animate() {
+            requestAnimationFrame(animate);
+
+            time += 0.01;
+
+            // Update shader uniforms
+            material.uniforms.uScrollSpeed.value = scrollSpeed;
+            material.uniforms.uTime.value = time;
+
+            // Subtle rotation based on scroll
+            plane.rotation.z = scrollSpeed * 0.05;
+
+            renderer.render(scene, camera);
+        }
+
+        // ============================================
+        // START
+        // ============================================
+        init();
+        animate();
+
+        // Cursor effect
+        const cursor = document.createElement('div');
+        cursor.style.cssText = `
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.2s ease;
+            mix-blend-mode: difference;
+        `;
+        document.body.appendChild(cursor);
+
+        let cursorX = 0, cursorY = 0;
+        let targetX = 0, targetY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+        });
+
+        function updateCursor() {
+            cursorX += (targetX - cursorX) * 0.1;
+            cursorY += (targetY - cursorY) * 0.1;
+
+            cursor.style.left = cursorX - 10 + 'px';
+            cursor.style.top = cursorY - 10 + 'px';
+
+            requestAnimationFrame(updateCursor);
+        }
+        updateCursor();
+
+        // Hover effects
+        document.querySelectorAll('.image-container, .text-content h2').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

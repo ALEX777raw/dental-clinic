@@ -98,6 +98,14 @@
         </svg>
     </button>
 
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-indicator" style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: rgba(0, 0, 0, 0.1); z-index: 10000; pointer-events: none;">
+        <div class="scroll-progress-bar" id="scrollProgressBar" style="height: 100%; background: linear-gradient(90deg, #007ACC, #87CEEB); width: 0%; transition: width 0.1s ease;"></div>
+    </div>
+
+    <!-- Three.js Canvas Overlay for Scroll Effects -->
+    <canvas id="webgl-distortion-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.15;"></canvas>
+
     <!-- Google Reviews Badge -->
     <a href="#testimonials" class="google-reviews-badge">
         <div class="google-icon">
@@ -1758,6 +1766,352 @@
             setInterval(updateCountdown, 1000);
             showModal();
         })();
+    </script>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Scroll Distortion Effects -->
+    <script>
+        // ============================================
+        // VERTEX SHADER
+        // ============================================
+        const vertexShader = `
+            varying vec2 vUv;
+            uniform float uScrollSpeed;
+            uniform float uTime;
+
+            void main() {
+                vUv = uv;
+
+                vec3 pos = position;
+
+                // Wave distortion based on scroll speed
+                float distortion = sin(pos.y * 3.0 + uTime * 0.5) * uScrollSpeed * 0.3;
+                pos.x += distortion;
+
+                // Vertical stretch effect
+                pos.y += uScrollSpeed * pos.y * 0.5;
+
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+            }
+        `;
+
+        // ============================================
+        // FRAGMENT SHADER
+        // ============================================
+        const fragmentShader = `
+            uniform sampler2D uTexture;
+            uniform float uScrollSpeed;
+            uniform float uTime;
+            varying vec2 vUv;
+
+            void main() {
+                vec2 uv = vUv;
+
+                // RGB split effect based on scroll speed
+                float offset = uScrollSpeed * 0.02;
+
+                float r = texture2D(uTexture, uv + vec2(offset, 0.0)).r;
+                float g = texture2D(uTexture, uv).g;
+                float b = texture2D(uTexture, uv - vec2(offset, 0.0)).b;
+
+                // Wave distortion in UV
+                uv.x += sin(uv.y * 10.0 + uTime) * uScrollSpeed * 0.01;
+                uv.y += cos(uv.x * 10.0 + uTime) * uScrollSpeed * 0.01;
+
+                vec4 color = vec4(r, g, b, 1.0);
+
+                // Vignette effect
+                float dist = distance(vUv, vec2(0.5));
+                color.rgb *= 1.0 - dist * 0.3;
+
+                gl_FragColor = color;
+            }
+        `;
+
+        // ============================================
+        // SCENE SETUP
+        // ============================================
+        let scene, camera, renderer, plane, material;
+        let scrollSpeed = 0;
+        let targetScrollSpeed = 0;
+        let time = 0;
+
+        function initDistortionEffect() {
+            // Scene
+            scene = new THREE.Scene();
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+            camera.position.z = 5;
+
+            // Renderer
+            const canvas = document.getElementById('webgl-distortion-canvas');
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                alpha: true,
+                antialias: true
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Texture (use a gradient or subtle pattern)
+            const textureLoader = new THREE.TextureLoader();
+            const texture = textureLoader.load(
+                'data:image/svg+xml;base64,' + btoa(`
+                    <svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#007ACC;stop-opacity:0.3" />
+                                <stop offset="50%" style="stop-color:#87CEEB;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#C5A572;stop-opacity:0.3" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="450" fill="url(#grad)" />
+                        <circle cx="200" cy="150" r="100" fill="rgba(255,255,255,0.05)" />
+                        <circle cx="600" cy="300" r="120" fill="rgba(255,255,255,0.05)" />
+                    </svg>
+                `)
+            );
+
+            // Geometry
+            const geometry = new THREE.PlaneGeometry(8, 4.5, 32, 32);
+
+            // Material with custom shaders
+            material = new THREE.ShaderMaterial({
+                uniforms: {
+                    uTexture: { value: texture },
+                    uScrollSpeed: { value: 0 },
+                    uTime: { value: 0 }
+                },
+                vertexShader: vertexShader,
+                fragmentShader: fragmentShader,
+                transparent: true,
+                side: THREE.DoubleSide
+            });
+
+            // Mesh
+            plane = new THREE.Mesh(geometry, material);
+            scene.add(plane);
+
+            // Resize listener
+            window.addEventListener('resize', onDistortionResize);
+        }
+
+        function onDistortionResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // ============================================
+        // LENIS SMOOTH SCROLL
+        // ============================================
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        // Scroll event
+        lenis.on('scroll', (e) => {
+            targetScrollSpeed = Math.abs(e.velocity) * 0.1;
+
+            // Update progress bar
+            const progress = (e.scroll / e.limit) * 100;
+            document.getElementById('scrollProgressBar').style.width = progress + '%';
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // ============================================
+        // GSAP SCROLLTRIGGER
+        // ============================================
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Smooth scroll speed interpolation
+        gsap.ticker.add(() => {
+            scrollSpeed += (targetScrollSpeed - scrollSpeed) * 0.1;
+            targetScrollSpeed *= 0.95; // Decay
+        });
+
+        // Animate service cards on scroll
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                gsap.utils.toArray('.service-card').forEach((card, i) => {
+                    gsap.fromTo(card,
+                        {
+                            opacity: 0,
+                            y: 80,
+                            scale: 0.95
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.8,
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: card,
+                                start: 'top 85%',
+                                end: 'top 50%',
+                                toggleActions: 'play none none reverse'
+                            }
+                        }
+                    );
+                });
+
+                // Animate testimonial cards
+                gsap.utils.toArray('.testimonial-card').forEach((card) => {
+                    gsap.fromTo(card,
+                        {
+                            opacity: 0,
+                            y: 60
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.7,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: card,
+                                start: 'top 85%',
+                                toggleActions: 'play none none reverse'
+                            }
+                        }
+                    );
+                });
+
+                // Animate section headings
+                gsap.utils.toArray('.section-title, .section-heading').forEach((heading) => {
+                    gsap.fromTo(heading,
+                        {
+                            opacity: 0,
+                            y: 40
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.6,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: heading,
+                                start: 'top 90%',
+                                toggleActions: 'play none none reverse'
+                            }
+                        }
+                    );
+                });
+            }, 100);
+        });
+
+        // ============================================
+        // ANIMATION LOOP
+        // ============================================
+        function animateDistortion() {
+            requestAnimationFrame(animateDistortion);
+
+            time += 0.01;
+
+            // Update shader uniforms
+            if (material) {
+                material.uniforms.uScrollSpeed.value = scrollSpeed;
+                material.uniforms.uTime.value = time;
+            }
+
+            // Subtle rotation based on scroll
+            if (plane) {
+                plane.rotation.z = scrollSpeed * 0.05;
+            }
+
+            if (renderer && scene && camera) {
+                renderer.render(scene, camera);
+            }
+        }
+
+        // ============================================
+        // CUSTOM CURSOR
+        // ============================================
+        const cursor = document.createElement('div');
+        cursor.style.cssText = `
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 122, 204, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            mix-blend-mode: difference;
+            display: none;
+        `;
+        document.body.appendChild(cursor);
+
+        let cursorX = 0, cursorY = 0;
+        let targetCursorX = 0, targetCursorY = 0;
+
+        // Only show custom cursor on desktop
+        if (window.innerWidth > 1024) {
+            cursor.style.display = 'block';
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            targetCursorX = e.clientX;
+            targetCursorY = e.clientY;
+        });
+
+        function updateCursor() {
+            cursorX += (targetCursorX - cursorX) * 0.1;
+            cursorY += (targetCursorY - cursorY) * 0.1;
+
+            cursor.style.left = cursorX - 10 + 'px';
+            cursor.style.top = cursorY - 10 + 'px';
+
+            requestAnimationFrame(updateCursor);
+        }
+        updateCursor();
+
+        // Hover effects
+        document.querySelectorAll('.btn, .service-card, .nav-link, a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                cursor.style.borderColor = 'rgba(197, 165, 114, 0.8)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.borderColor = 'rgba(0, 122, 204, 0.5)';
+            });
+        });
+
+        // ============================================
+        // START
+        // ============================================
+        initDistortionEffect();
+        animateDistortion();
     </script>
 </body>
 </html>

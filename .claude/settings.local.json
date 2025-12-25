@@ -7,7 +7,13 @@
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git remote get-url:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(start http://localhost:8000)",
+      "Bash(python -m http.server:*)",
+      "Bash(timeout 3 curl:*)",
+      "Bash(git restore:*)"
     ]
   }
 }

@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Стоматологическая клиника Здоровая Улыбка - профессиональная стоматология. Современное оборудование, опытные врачи, доступные цены.">
+    <meta name="keywords" content="стоматология, зубной врач, лечение зубов, отбеливание зубов, имплантация, стоматолог">
+    <meta name="author" content="Здоровая Улыбка">
+    <title>Здоровая Улыбка - Стоматологическая Клиника | Профессиональная стоматология</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zdorovaya-ulybka.ru/">
+    <meta property="og:title" content="Здоровая Улыбка - Стоматологическая Клиника">
+    <meta property="og:description" content="Профессиональная стоматология. Современное оборудование, опытные врачи, доступные цены.">
+    <meta property="og:image" content="https://zdorovaya-ulybka.ru/images/og-image.jpg">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zdorovaya-ulybka.ru/">
+    <meta property="twitter:title" content="Здоровая Улыбка - Стоматологическая Клиника">
+    <meta property="twitter:description" content="Профессиональная стоматология. Современное оборудование, опытные врачи.">
+    <meta property="twitter:image" content="https://zdorovaya-ulybka.ru/images/twitter-image.jpg">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Здоровая Улыбка",
+        "description": "Стоматологическая клиника с современным оборудованием и опытными врачами",
+        "url": "https://zdorovaya-ulybka.ru",
+        "telephone": "+7 (495) 123-45-67",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Примерная, 123",
+            "addressLocality": "Москва",
+            "addressRegion": "Москва",
+            "postalCode": "123456",
+            "addressCountry": "RU"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "20:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "18:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "290"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Open+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css?v=3.0">
+    <link rel="stylesheet" href="css/components.css?v=3.0">
+    <link rel="stylesheet" href="css/responsive.css?v=3.0">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content" style="text-align: center;">
+            <div class="loader-logo" style="margin-bottom: 2rem;">
+                <svg width="80" height="80" viewBox="0 0 80 80" class="svg-draw">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="#1B3A5D" stroke-width="2"/>
+                    <path d="M25 35 Q40 20 55 35 Q55 55 40 65 Q25 55 25 35" fill="none" stroke="#C5A572" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="dots-loading" style="justify-content: center;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accessibility Button -->
+    <button class="accessibility-btn" id="accessibilityBtn" aria-label="Настройки доступности" onclick="document.body.classList.toggle('high-contrast'); alert('Режим высокой контрастности ' + (document.body.classList.contains('high-contrast') ? 'включен' : 'выключен'));">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/>
+        </svg>
+    </button>
+
+    <!-- Google Reviews Badge -->
+    <a href="#testimonials" class="google-reviews-badge">
+        <div class="google-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+        </div>
+        <span class="rating">5.0</span>
+        <div class="stars">★★★★★</div>
+        <span class="reviews-count">290+ отзывов</span>
+    </a>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-text">
+                    <span class="logo-small">ЗДОРОВАЯ</span>
+                    <span class="logo-main">Улыбка</span>
+                    <span class="logo-sub">СТОМАТОЛОГИЯ</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="about.html" class="nav-link">О НАС</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">О клинике</a></li>
+                            <li><a href="team.html">Наша команда</a></li>
+                            <li><a href="technology.html">Технологии</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="services.html" class="nav-link">УСЛУГИ</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html#therapy">Терапия</a></li>
+                            <li><a href="services.html#surgery">Хирургия</a></li>
+                            <li><a href="services.html#orthodontics">Ортодонтия</a></li>
+                            <li><a href="services.html#implantation">Имплантация</a></li>
+                            <li><a href="services.html#whitening">Отбеливание</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">ПАЦИЕНТАМ</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="first-visit.html">Первый визит</a></li>
+                            <li><a href="payment.html">Оплата</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">АДРЕСА</a></li>
+                    <li class="nav-item"><a href="#specials" class="nav-link">АКЦИИ</a></li>
+                    <li class="nav-item"><a href="contacts.html" class="nav-link">КОНТАКТЫ</a></li>
+                    <li class="nav-item"><a href="payment.html" class="nav-link">ОПЛАТА ОНЛАЙН</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="language-switcher">
+                    <a href="index-ru.html" class="lang-link active" title="Русский">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span>RU</span>
+                    </a>
+                    <span class="lang-divider">|</span>
+                    <a href="index.html" class="lang-link" title="English">
+                        <span>EN</span>
+                    </a>
+                </div>
+                <a href="tel:+74951234567" class="phone-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>+7 (495) 123-45-67</span>
+                </a>
+                <a href="booking.html" class="btn btn-primary btn-appointment">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>Записаться</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo-text"><span class="logo-main" style="font-size:1.5rem;color:#1B3A5D;">Улыбка</span></div>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">О нас</a></li>
+                <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Услуги</a></li>
+                <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link">Адреса</a></li>
+                <li class="mobile-nav-item"><a href="#specials" class="mobile-nav-link">Акции</a></li>
+                <li class="mobile-nav-item"><a href="contacts.html" class="mobile-nav-link">Контакты</a></li>
+                <li class="mobile-nav-item" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 1rem;">
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <a href="index-ru.html" style="padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.5); border-radius: 0.5rem; color: white; text-decoration: none; font-weight: 600;">🇷🇺 Русский</a>
+                        <a href="index.html" style="padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 0.5rem; color: white; text-decoration: none;">🇺🇸 English</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="tel:+74951234567" class="mobile-phone">+7 (495) 123-45-67</a>
+            <a href="booking.html" class="btn btn-primary btn-full">Записаться на прием</a>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero Section with Background -->
+        <section class="hero-main" id="heroMain">
+            <div class="hero-background">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Интерьер клиники" class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <!-- Floating Decorative Shapes -->
+            <div class="floating-shapes">
+                <div class="floating-shape"></div>
+                <div class="floating-shape"></div>
+                <div class="floating-shape"></div>
+            </div>
+
+            <!-- Animated SVG Decorations -->
+            <svg class="hero-decoration hero-decoration-1 svg-float" width="120" height="120" viewBox="0 0 120 120" style="position: absolute; top: 15%; right: 10%; opacity: 0.15;">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="#C5A572" stroke-width="2" stroke-dasharray="10 5"/>
+                <circle cx="60" cy="60" r="35" fill="none" stroke="#fff" stroke-width="1"/>
+            </svg>
+            <svg class="hero-decoration hero-decoration-2 svg-pulse" width="80" height="80" viewBox="0 0 80 80" style="position: absolute; bottom: 20%; left: 5%; opacity: 0.1;">
+                <polygon points="40,5 75,25 75,55 40,75 5,55 5,25" fill="none" stroke="#fff" stroke-width="2"/>
+            </svg>
+            <svg class="hero-decoration hero-decoration-3 svg-rotate" width="60" height="60" viewBox="0 0 60 60" style="position: absolute; top: 40%; right: 5%; opacity: 0.08;">
+                <rect x="10" y="10" width="40" height="40" fill="none" stroke="#C5A572" stroke-width="2" rx="5"/>
+            </svg>
+
+            <div class="container">
+                <div class="hero-main-content">
+                    <div class="hero-logo-large glow-circle">
+                        <span class="hero-logo-text-small">ЗДОРОВАЯ</span>
+                        <span class="hero-logo-text-main text-gradient-animate">Улыбка</span>
+                        <span class="hero-logo-text-sub">СТОМАТОЛОГИЯ</span>
+                    </div>
+                    <p class="hero-tagline">ЖИЗНЬ ПРЕКРАСНЕЕ, КОГДА ВЫ УЛЫБАЕТЕСЬ</p>
+                    <h2 class="hero-cta-title">ПРИНИМАЕМ НОВЫХ ПАЦИЕНТОВ</h2>
+                    <div class="hero-buttons">
+                        <a href="membership.html" class="btn btn-primary btn-pulse shine-sweep">Наше членство</a>
+                        <a href="#specials" class="btn btn-primary btn-bounce shine-sweep">Акция для новых пациентов</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wave Divider -->
+            <div class="section-wave">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path fill="#ffffff" d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120 Z"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Gold Provider Section -->
+        <section class="provider-section" id="provider">
+            <div class="container">
+                <div class="provider-content">
+                    <div class="provider-text">
+                        <h1 class="provider-title">Стоматология Здоровая Улыбка - Клиника Премиум Класса</h1>
+                        <div class="title-underline"></div>
+                        <p class="provider-description">
+                            Благодаря передовому обучению нашей команды и успешному лечению многочисленных пациентов,
+                            <a href="about.html" class="text-link">Стоматология Здоровая Улыбка</a> рада предложить вам
+                            услуги премиум-класса. Приходите и ощутите удобство и уверенность в безупречной улыбке.
+                            Запишитесь на первичную консультацию сегодня по телефону
+                            <a href="tel:+74951234567" class="text-link">+7 (495) 123-45-67</a>.
+                        </p>
+                    </div>
+                    <div class="provider-badge">
+                        <div class="badge-content">
+                            <div class="badge-icon">
+                                <svg viewBox="0 0 100 120" width="200" height="240">
+                                    <polygon points="50,10 90,35 90,85 50,110 10,85 10,35" fill="none" stroke="#C5A572" stroke-width="2"/>
+                                    <line x1="50" y1="110" x2="50" y2="85" stroke="#C5A572" stroke-width="2"/>
+                                    <text x="50" y="50" text-anchor="middle" fill="#C5A572" font-size="16" font-weight="bold" font-family="Arial">GOLD</text>
+                                    <text x="50" y="70" text-anchor="middle" fill="#C5A572" font-size="10" font-family="Arial" letter-spacing="2">INVISALIGN</text>
+                                    <text x="50" y="85" text-anchor="middle" fill="#C5A572" font-size="10" font-family="Arial" letter-spacing="2">PROVIDER</text>
+                                    <text x="50" y="102" text-anchor="middle" fill="#C5A572" font-size="14" font-family="Arial">2024</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section section bg-mesh" id="about">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle" data-animate="fade-up">ДОБРО ПОЖАЛОВАТЬ</span>
+                    <h2 class="section-title" data-animate="fade-up">Стоматология в Москве</h2>
+                    <div class="title-underline centered" data-animate="fade-up"></div>
+                </div>
+                <div class="about-content">
+                    <p class="about-text" data-animate="fade-up">
+                        В стоматологии Здоровая Улыбка мы предоставляем полный комплекс стоматологических услуг для вас и ваших близких.
+                        Наши профессиональные специалисты стремятся обеспечить комфортный опыт без осуждения,
+                        который оставит вас вдохновленными, посвежевшими и поддержанными заботливой командой.
+                        Мы ценим искренние связи, которые устанавливаем с нашими пациентами, работая вместе с каждым человеком с сердечным подходом.
+                    </p>
+                </div>
+                <div class="about-images stagger-children">
+                    <div class="about-image-wrapper image-reveal tilt-effect">
+                        <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80" alt="Счастливая семья" class="about-image">
+                    </div>
+                    <div class="about-image-wrapper image-reveal tilt-effect">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80" alt="Интерьер клиники" class="about-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section section bg-gradient-animate" style="padding: 5rem 0;">
+            <div class="container">
+                <div class="stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
+                    <div class="stat-item" data-animate="bounce-in" style="position: relative;">
+                        <div class="stat-icon svg-heartbeat" style="margin-bottom: 1rem;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="white" stroke-width="2">
+                                <path d="M25 45S5 30 5 18C5 10 12 5 19 5C23 5 25 8 25 8S27 5 31 5C38 5 45 10 45 18C45 30 25 45 25 45Z"/>
+                            </svg>
+                        </div>
+                        <span class="stat-number" data-counter="15000" style="color: white;">15000</span>
+                        <span class="stat-suffix" style="color: rgba(255,255,255,0.9); font-size: 1.5rem;">+</span>
+                        <span class="stat-label" style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Довольных пациентов</span>
+                    </div>
+                    <div class="stat-item" data-animate="bounce-in" data-delay="100" style="position: relative;">
+                        <div class="stat-icon svg-pulse" style="margin-bottom: 1rem;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="25" cy="25" r="20"/>
+                                <path d="M25 15V25L32 30"/>
+                            </svg>
+                        </div>
+                        <span class="stat-number" data-counter="20" style="color: white;">20</span>
+                        <span class="stat-label" style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Лет опыта</span>
+                    </div>
+                    <div class="stat-item" data-animate="bounce-in" data-delay="200" style="position: relative;">
+                        <div class="stat-icon svg-float" style="margin-bottom: 1rem;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="white" stroke-width="2">
+                                <path d="M25 5L30 20H45L33 30L38 45L25 35L12 45L17 30L5 20H20L25 5Z"/>
+                            </svg>
+                        </div>
+                        <span class="stat-number" style="color: white;">5.0</span>
+                        <span class="stat-label" style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Рейтинг на Google</span>
+                    </div>
+                    <div class="stat-item" data-animate="bounce-in" data-delay="300" style="position: relative;">
+                        <div class="stat-icon svg-glow" style="margin-bottom: 1rem; color: white;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="8" y="8" width="34" height="34" rx="4"/>
+                                <path d="M18 25L23 30L32 20"/>
+                            </svg>
+                        </div>
+                        <span class="stat-number" data-counter="50" style="color: white;">50</span>
+                        <span class="stat-suffix" style="color: rgba(255,255,255,0.9); font-size: 1.5rem;">+</span>
+                        <span class="stat-label" style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Видов услуг</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="features-section section" id="features" style="background: var(--color-gray-50); padding: 6rem 0; position: relative; overflow: hidden;">
+            <!-- Background decoration -->
+            <div class="bg-particles"></div>
+
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="section-header centered">
+                    <span class="section-subtitle" data-animate="fade-up">НАШИ ПРЕИМУЩЕСТВА</span>
+                    <h2 class="section-title" data-animate="fade-up">Почему выбирают нас</h2>
+                    <div class="title-underline centered" data-animate="fade-up"></div>
+                </div>
+
+                <div class="features-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem;">
+                    <!-- Feature 1 -->
+                    <div class="feature-card tilt-effect" data-animate="elastic" style="background: white; padding: 2.5rem 1.5rem; border-radius: 1rem; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;">
+                        <div class="feature-icon-img">
+                            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=200&q=80" alt="Современное оборудование">
+                        </div>
+                        <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1rem; font-family: var(--font-primary);">Современное оборудование</h3>
+                        <p style="color: var(--color-gray-600); line-height: 1.7; font-size: 0.95rem;">Используем новейшие технологии и оборудование для точной диагностики и безболезненного лечения.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card tilt-effect" data-animate="elastic" data-delay="100" style="background: white; padding: 2.5rem 1.5rem; border-radius: 1rem; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;">
+                        <div class="feature-icon-img">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&q=80" alt="Опытные врачи">
+                        </div>
+                        <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1rem; font-family: var(--font-primary);">Опытные врачи</h3>
+                        <p style="color: var(--color-gray-600); line-height: 1.7; font-size: 0.95rem;">Наша команда - сертифицированные специалисты с многолетним опытом и постоянным повышением квалификации.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card tilt-effect" data-animate="elastic" data-delay="200" style="background: white; padding: 2.5rem 1.5rem; border-radius: 1rem; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;">
+                        <div class="feature-icon-img">
+                            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=200&q=80" alt="Уютная атмосфера">
+                        </div>
+                        <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1rem; font-family: var(--font-primary);">Уютная атмосфера</h3>
+                        <p style="color: var(--color-gray-600); line-height: 1.7; font-size: 0.95rem;">Комфортная обстановка, приветливый персонал и индивидуальный подход к каждому пациенту.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card tilt-effect" data-animate="elastic" data-delay="300" style="background: white; padding: 2.5rem 1.5rem; border-radius: 1rem; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;">
+                        <div class="feature-icon-img">
+                            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=200&q=80" alt="Гарантия качества">
+                        </div>
+                        <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1rem; font-family: var(--font-primary);">Гарантия качества</h3>
+                        <p style="color: var(--color-gray-600); line-height: 1.7; font-size: 0.95rem;">Предоставляем гарантию на все виды работ и используем только сертифицированные материалы.</p>
+                    </div>
+                </div>
+
+                <!-- Additional features row -->
+                <div class="features-grid-2" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <div class="feature-mini animated-border" data-animate="fade-up" style="background: white; padding: 1.5rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem;">
+                        <div class="feature-mini-icon svg-pulse" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1rem; color: var(--color-primary); margin-bottom: 0.25rem;">Работаем без выходных</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-gray-500);">Удобный график для занятых людей</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-mini animated-border" data-animate="fade-up" data-delay="100" style="background: white; padding: 1.5rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem;">
+                        <div class="feature-mini-icon svg-float" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1rem; color: var(--color-primary); margin-bottom: 0.25rem;">Рассрочка 0%</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-gray-500);">Удобная оплата без переплат</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-mini animated-border" data-animate="fade-up" data-delay="200" style="background: white; padding: 1.5rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem;">
+                        <div class="feature-mini-icon svg-heartbeat" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1rem; color: var(--color-primary); margin-bottom: 0.25rem;">Экстренная помощь</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-gray-500);">Прием в день обращения</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before/After Gallery Section -->
+        <section class="gallery-section section" id="gallery">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle" data-animate="fade-up">РЕЗУЛЬТАТЫ РАБОТЫ</span>
+                    <h2 class="section-title" data-animate="fade-up">До и После</h2>
+                    <div class="title-underline centered" data-animate="fade-up"></div>
+                    <p style="max-width: 600px; margin: 1.5rem auto 0; color: var(--color-gray-600);" data-animate="fade-up">Посмотрите реальные результаты наших пациентов. Каждая улыбка — это история успеха.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item" data-animate="fade-up">
+                        <div class="before-after-slider" data-slider="1">
+                            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="До лечения" class="before-image">
+                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80" alt="После лечения" class="after-image">
+                            <div class="slider-handle"></div>
+                            <span class="before-after-label before">До</span>
+                            <span class="before-after-label after">После</span>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-info">
+                                <h4>Отбеливание зубов</h4>
+                                <p>Профессиональное отбеливание ZOOM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item" data-animate="fade-up" data-delay="100">
+                        <div class="before-after-slider" data-slider="2">
+                            <img src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?w=600&q=80" alt="До лечения" class="before-image">
+                            <img src="https://images.unsplash.com/photo-1581585405984-eb5d99d6b3c0?w=600&q=80" alt="После лечения" class="after-image">
+                            <div class="slider-handle"></div>
+                            <span class="before-after-label before">До</span>
+                            <span class="before-after-label after">После</span>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-info">
+                                <h4>Виниры</h4>
+                                <p>Керамические виниры E-max</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item" data-animate="fade-up" data-delay="200">
+                        <div class="before-after-slider" data-slider="3">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="До лечения" class="before-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="После лечения" class="after-image">
+                            <div class="slider-handle"></div>
+                            <span class="before-after-label before">До</span>
+                            <span class="before-after-label after">После</span>
+                        </div>
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-info">
+                                <h4>Элайнеры</h4>
+                                <p>Выравнивание прикуса за 8 месяцев</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="gallery.html" class="btn btn-primary shine-sweep">Смотреть все работы</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Procedures Showcase Section -->
+        <section class="procedures-section section" id="procedures">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle" data-animate="fade-up">НАШИ УСЛУГИ</span>
+                    <h2 class="section-title" data-animate="fade-up">Популярные процедуры</h2>
+                    <div class="title-underline centered" data-animate="fade-up" style="background-color: var(--color-accent);"></div>
+                </div>
+
+                <div class="procedures-grid">
+                    <!-- Procedure 1 -->
+                    <div class="procedure-card" data-animate="fade-up">
+                        <div class="procedure-card-image">
+                            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=300&q=80" alt="Имплантация">
+                        </div>
+                        <h4>Имплантация</h4>
+                        <p>Восстановление зубов с помощью современных имплантов премиум-класса</p>
+                        <a href="services.html#implantation" class="procedure-card-link">
+                            Подробнее
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Procedure 2 -->
+                    <div class="procedure-card" data-animate="fade-up" data-delay="100">
+                        <div class="procedure-card-image">
+                            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=300&q=80" alt="Отбеливание">
+                        </div>
+                        <h4>Отбеливание</h4>
+                        <p>Профессиональное отбеливание для белоснежной улыбки за 1 визит</p>
+                        <a href="services.html#whitening" class="procedure-card-link">
+                            Подробнее
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Procedure 3 -->
+                    <div class="procedure-card" data-animate="fade-up" data-delay="200">
+                        <div class="procedure-card-image">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=300&q=80" alt="Элайнеры">
+                        </div>
+                        <h4>Элайнеры</h4>
+                        <p>Невидимое исправление прикуса с помощью прозрачных кап</p>
+                        <a href="services.html#aligners" class="procedure-card-link">
+                            Подробнее
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Procedure 4 -->
+                    <div class="procedure-card" data-animate="fade-up" data-delay="300">
+                        <div class="procedure-card-image">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80" alt="Виниры">
+                        </div>
+                        <h4>Виниры</h4>
+                        <p>Идеальная улыбка с керамическими винирами премиум качества</p>
+                        <a href="services.html#veneers" class="procedure-card-link">
+                            Подробнее
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Banner -->
+        <section class="appointment-banner">
+            <div class="container">
+                <div class="appointment-banner-content">
+                    <div class="appointment-banner-text">
+                        <h3>Готовы преобразить свою улыбку?</h3>
+                        <p>Запишитесь на бесплатную консультацию прямо сейчас</p>
+                    </div>
+                    <a href="booking.html" class="appointment-banner-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        Записаться на прием
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section section" id="services">
+            <div class="services-background">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80" alt="Стоматология" class="services-bg-image">
+                <div class="services-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-3.31 0-6-2.69-6-6h2c0 2.21 1.79 4 4 4s4-1.79 4-4h2c0 3.31-2.69 6-6 6zm0-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">ЭКСТРЕННАЯ СТОМАТОЛОГИЯ В ДЕНЬ ОБРАЩЕНИЯ</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Столкнулись с постоянной зубной болью или травмой полости рта? Мы поможем, предоставив экстренную стоматологическую помощь в тот же день.</p>
+                        <a href="services.html#emergency" class="btn btn-outline-light">Исцелите улыбку</a>
+                    </div>
+
+                    <div class="service-card featured">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C10.08 2 8.5 3.58 8.5 5.5c0 1.58 1.08 4.07 1.68 5.3.16.32.4.58.69.76l-.12 6.19c-.05 1.23.91 2.25 2.14 2.25h.22c1.23 0 2.19-1.02 2.14-2.25l-.12-6.19c.29-.18.53-.44.69-.76.6-1.23 1.68-3.72 1.68-5.3C15.5 3.58 13.92 2 12 2zm0 2c1.1 0 2 .9 2 2 0 .74-.5 2.1-1 3.23V14h-2V9.23C10.5 8.1 10 6.74 10 6c0-1.1.9-2 2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">ЭЛАЙНЕРЫ</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Ищете комфортный и прозрачный способ сделать ваши зубы идеальными? Элайнеры делают выравнивание зубов проще, чем когда-либо.</p>
+                        <a href="services.html#aligners" class="btn btn-outline-light">Выровняйте улыбку</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.5 2C8.12 2 7 3.12 7 4.5c0 .94.54 1.74 1.31 2.15C7.51 7.36 7 8.39 7 9.5c0 1.06.45 2 1.16 2.68-.71.68-1.16 1.62-1.16 2.68 0 1.11.51 2.14 1.31 2.85C7.54 18.41 7 19.21 7 20.15V21h10v-.85c0-.94-.54-1.74-1.31-2.15.8-.71 1.31-1.74 1.31-2.85 0-1.06-.45-2-1.16-2.68.71-.68 1.16-1.62 1.16-2.68 0-1.11-.51-2.14-1.31-2.85C16.46 6.24 17 5.44 17 4.5 17 3.12 15.88 2 14.5 2h-5zm0 2h5c.28 0 .5.22.5.5s-.22.5-.5.5h-5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">КОСМЕТИЧЕСКАЯ СТОМАТОЛОГИЯ</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">От профессионального отбеливания до индивидуального преображения улыбки. Мы рады помочь подчеркнуть вашу естественную красоту!</p>
+                        <a href="services.html#cosmetic" class="btn btn-outline-light">Полюбите улыбку</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section section" id="testimonials">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">ВЫ В НАДЕЖНЫХ РУКАХ</span>
+                    <h2 class="section-title">Отзывы наших пациентов</h2>
+                </div>
+                <div class="testimonials-slider" id="testimonialsSlider">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <div class="testimonial-card">
+                            <h4 class="testimonial-author">Мария Н.</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">Доктор действительно замечательный! Мои дети впервые были у стоматолога, и им очень понравилось! Она очень милая и нежная во время процедуры!</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <h4 class="testimonial-author">Николай К.</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">Отличный опыт! Процесс записи прост и удобен. Весь персонал очень дружелюбный и информативный. Очень рекомендую!</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <h4 class="testimonial-author">Максим С.</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">Потрясающий опыт. Доктор очень профессиональна. Она создает комфортную атмосферу и четко объясняет проблему. Рекомендую!</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <h4 class="testimonial-author">Анна П.</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">Прекрасная клиника с современным оборудованием. Очень довольна результатом лечения. Персонал внимательный и заботливый.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <h4 class="testimonial-author">Дмитрий В.</h4>
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p class="testimonial-text">Лучшая стоматология, в которой я был! Профессиональный подход, современные методы лечения и очень приятная атмосфера.</p>
+                        </div>
+                    </div>
+                    <button class="slider-btn slider-btn-prev" id="sliderPrev" aria-label="Предыдущий">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button class="slider-btn slider-btn-next" id="sliderNext" aria-label="Следующий">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section" id="contact">
+            <div class="container">
+                <div class="contact-tabs">
+                    <button class="contact-tab active" onclick="this.classList.add('active')">ПОСЕТИТЕ НАШ ОФИС</button>
+                    <button class="contact-tab" onclick="alert('Виртуальный тур скоро будет доступен!')">ВИРТУАЛЬНЫЙ ТУР</button>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info-wrapper">
+                        <span class="contact-subtitle">ПРИХОДИТЕ К НАМ</span>
+                        <h2 class="contact-title">Свяжитесь с нами</h2>
+                        <div class="title-underline"></div>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h4 class="contact-item-title">Телефон</h4>
+                                <a href="tel:+74951234567" class="contact-item-value">+7 (495) 123-45-67</a>
+                            </div>
+                            <div class="contact-item">
+                                <h4 class="contact-item-title">Адрес</h4>
+                                <address class="contact-item-value">ул. Примерная, д. 123<br>Москва, 123456</address>
+                                <p class="contact-note">Парковка доступна на заднем дворе!</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4 class="contact-item-title">Email</h4>
+                                <a href="mailto:info@healthy-smile.ru" class="contact-item-value">info@healthy-smile.ru</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-hours">
+                            <h4 class="contact-item-title">Часы работы</h4>
+                            <ul class="hours-list">
+                                <li><span class="day">ПН:</span> <span class="time">По записи</span></li>
+                                <li><span class="day">ВТ:</span> <span class="time">8:00 - 16:30</span></li>
+                                <li><span class="day">СР:</span> <span class="time">9:00 - 17:30</span></li>
+                                <li><span class="day">ЧТ:</span> <span class="time">9:00 - 17:00</span></li>
+                                <li><span class="day">ПТ:</span> <span class="time">7:00 - 15:00</span></li>
+                                <li><span class="day">СБ:</span> <span class="time">По записи</span></li>
+                                <li><span class="day">ВС:</span> <span class="time">Закрыто</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-map-wrapper">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.3714767498647!2d37.61762931593065!3d55.75539998055638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrRgNC10LzQu9GM!5e0!3m2!1sru!2sru!4v1703849123456" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" title="Карта"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section section" id="team">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">ПОЗНАКОМЬТЕСЬ С НАМИ</span>
+                    <h2 class="section-title">Наши специалисты</h2>
+                    <div class="title-underline centered"></div>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Doctor 1 -->
+                    <div class="team-card">
+                        <div class="team-card-image">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Доктор Елена Волкова">
+                            <div class="team-card-overlay">
+                                <a href="team.html#volkova" class="btn btn-outline-light">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="team-card-body">
+                            <span class="team-card-subtitle">ВАШ НАДЕЖНЫЙ СТОМАТОЛОГ</span>
+                            <h3 class="team-card-name">Доктор Елена Волкова</h3>
+                            <div class="team-card-underline"></div>
+                            <p class="team-card-bio">Доктор Волкова любит все аспекты стоматологии, но её любимая часть работы — это установление настоящих отношений с пациентами и помощь им в обретении уверенности в своей улыбке.</p>
+                            <a href="team.html#volkova" class="team-card-link">Читать историю <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </div>
+
+                    <!-- Doctor 2 -->
+                    <div class="team-card">
+                        <div class="team-card-image">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Доктор Александр Петров">
+                            <div class="team-card-overlay">
+                                <a href="team.html#petrov" class="btn btn-outline-light">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="team-card-body">
+                            <span class="team-card-subtitle">ХИРУРГ-ИМПЛАНТОЛОГ</span>
+                            <h3 class="team-card-name">Доктор Александр Петров</h3>
+                            <div class="team-card-underline"></div>
+                            <p class="team-card-bio">С более чем 15-летним опытом в имплантологии, доктор Петров помог тысячам пациентов вернуть красивую улыбку с помощью современных технологий.</p>
+                            <a href="team.html#petrov" class="team-card-link">Читать историю <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </div>
+
+                    <!-- Doctor 3 -->
+                    <div class="team-card">
+                        <div class="team-card-image">
+                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Доктор Мария Соколова">
+                            <div class="team-card-overlay">
+                                <a href="team.html#sokolova" class="btn btn-outline-light">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="team-card-body">
+                            <span class="team-card-subtitle">ОРТОДОНТ</span>
+                            <h3 class="team-card-name">Доктор Мария Соколова</h3>
+                            <div class="team-card-underline"></div>
+                            <p class="team-card-bio">Специалист по элайнерам и брекетам, доктор Соколова создаёт индивидуальные планы лечения для достижения идеальной улыбки пациентов всех возрастов.</p>
+                            <a href="team.html#sokolova" class="team-card-link">Читать историю <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinic Tour Section -->
+        <section class="clinic-tour-section section" id="tour">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle" data-animate="fade-up">ДОБРО ПОЖАЛОВАТЬ</span>
+                    <h2 class="section-title" data-animate="fade-up">Тур по клинике</h2>
+                    <div class="title-underline centered" data-animate="fade-up"></div>
+                    <p style="max-width: 600px; margin: 1.5rem auto 0; color: var(--color-gray-600);" data-animate="fade-up">Познакомьтесь с нашей клиникой изнутри. Современное оборудование и уютная атмосфера.</p>
+                </div>
+
+                <div class="tour-grid">
+                    <!-- Main Video -->
+                    <div class="tour-item" data-animate="fade-up">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&q=80" alt="Главный холл клиники">
+                        <div class="tour-play-btn">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                        </div>
+                        <div class="tour-item-overlay">
+                            <h4>Виртуальный тур</h4>
+                            <p>Посмотрите видео о нашей клинике</p>
+                        </div>
+                    </div>
+
+                    <!-- Reception -->
+                    <div class="tour-item" data-animate="fade-up" data-delay="100">
+                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80" alt="Ресепшен">
+                        <div class="tour-item-overlay">
+                            <h4>Ресепшен</h4>
+                            <p>Уютная зона ожидания</p>
+                        </div>
+                    </div>
+
+                    <!-- Treatment Room -->
+                    <div class="tour-item" data-animate="fade-up" data-delay="200">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80" alt="Кабинет">
+                        <div class="tour-item-overlay">
+                            <h4>Кабинет</h4>
+                            <p>Современное оборудование</p>
+                        </div>
+                    </div>
+
+                    <!-- X-Ray Room -->
+                    <div class="tour-item" data-animate="fade-up" data-delay="300">
+                        <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=600&q=80" alt="Рентген кабинет">
+                        <div class="tour-item-overlay">
+                            <h4>Диагностика</h4>
+                            <p>3D томография и рентген</p>
+                        </div>
+                    </div>
+
+                    <!-- Sterilization -->
+                    <div class="tour-item" data-animate="fade-up" data-delay="400">
+                        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80" alt="Стерилизационная">
+                        <div class="tour-item-overlay">
+                            <h4>Стерилизация</h4>
+                            <p>Полная безопасность</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insurance Section -->
+        <section class="insurance-section section" id="insurance">
+            <div class="container">
+                <div class="insurance-content">
+                    <div class="insurance-image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Страхование">
+                    </div>
+                    <div class="insurance-text">
+                        <p>Не беспокойтесь. Даже если у вас нет страховки, вы можете получить необходимое лечение в нашей клинике по доступной цене. Для получения дополнительной информации о нашей программе членства <a href="contacts.html" class="text-link">свяжитесь с нами онлайн</a> или позвоните по телефону <a href="tel:+74951234567" class="text-link">+7 (495) 123-45-67</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section section" id="cta">
+            <div class="cta-background">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80" alt="Счастливые люди" class="cta-bg-image">
+                <div class="cta-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="cta-content">
+                    <span class="cta-subtitle">ЖИЗНЬ ПРЕКРАСНЕЕ, КОГДА ВЫ УЛЫБАЕТЕСЬ</span>
+                    <h2 class="cta-title">Запишитесь на прием сегодня</h2>
+                    <a href="booking.html" class="btn btn-outline-light btn-large btn-pulse">Начать</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section section" id="faq">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle" data-animate="fade-up">ОТВЕТЫ НА ВОПРОСЫ</span>
+                    <h2 class="section-title" data-animate="fade-up">Часто задаваемые вопросы</h2>
+                    <div class="title-underline centered" data-animate="fade-up"></div>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item active" data-animate="fade-up">
+                        <button class="faq-question">
+                            Как записаться на прием?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Вы можете записаться на прием несколькими способами: позвонить по телефону +7 (495) 123-45-67, написать нам в WhatsApp или Telegram, заполнить форму на сайте, или прийти лично в клинику. Мы работаем без выходных и всегда найдём удобное для вас время.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up" data-delay="100">
+                        <button class="faq-question">
+                            Какие способы оплаты вы принимаете?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Мы принимаем наличные, банковские карты (Visa, MasterCard, МИР), оплату через СБП, а также предлагаем рассрочку 0% на 6 и 12 месяцев без первоначального взноса. Также возможно лечение по полису ДМС.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up" data-delay="200">
+                        <button class="faq-question">
+                            Больно ли лечить зубы в вашей клинике?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Мы используем современные анестетики последнего поколения, которые обеспечивают полное обезболивание. Наши врачи применяют технику безболезненного введения анестезии. Для особо чувствительных пациентов предлагаем лечение под седацией.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up" data-delay="300">
+                        <button class="faq-question">
+                            Даете ли вы гарантию на лечение?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Да, мы предоставляем гарантию на все виды работ: на пломбы — до 2 лет, на коронки и виниры — до 5 лет, на имплантацию — пожизненная гарантия на импланты. Все детали прописываются в договоре.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate="fade-up" data-delay="400">
+                        <button class="faq-question">
+                            Принимаете ли вы детей?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Да, у нас работает детский стоматолог с опытом более 10 лет. Мы принимаем детей с 3 лет и создаём максимально комфортную атмосферу, чтобы первый визит к стоматологу стал позитивным опытом для ребёнка.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specials Section -->
+        <section class="specials-section section" id="specials">
+            <div class="container">
+                <div class="section-header centered">
+                    <h2 class="section-title" style="color: white;">Специальные предложения</h2>
+                </div>
+                <div class="specials-grid">
+                    <div class="special-card">
+                        <div class="special-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M15 20h30M15 30h30M20 40h20"/><rect x="10" y="10" width="40" height="40" rx="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="special-title">СКИДКА 30 000 ₽ НА ЭЛАЙНЕРЫ</h3>
+                        <div class="special-underline"></div>
+                        <p class="special-description">Уверенность в улыбке делает вас счастливее! Мы предлагаем скидку 30 000 ₽ на лечение <a href="services.html#aligners" style="color:#C5A572;">элайнерами</a>. Это комфортное, незаметное лечение для ровной улыбки.</p>
+                        <a href="tel:+74951234567" class="btn btn-primary">Позвонить +7 (495) 123-45-67</a>
+                    </div>
+
+                    <div class="special-card">
+                        <div class="special-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="30" cy="25" r="12"/><path d="M30 13v-5M30 37v5M18 25h-5M42 25h5M22 17l-3-3M38 17l3-3"/>
+                            </svg>
+                        </div>
+                        <h3 class="special-title">СКИДКА 5 000 ₽ НА ОТБЕЛИВАНИЕ</h3>
+                        <div class="special-underline"></div>
+                        <p class="special-description">Хотите белые зубы? С нашим предложением <a href="services.html#whitening" style="color:#C5A572;">отбеливание</a> не будет дорогим. Индивидуальные капы всего за 15 000 ₽!</p>
+                        <a href="tel:+74951234567" class="btn btn-primary">Позвонить +7 (495) 123-45-67</a>
+                    </div>
+
+                    <div class="special-card">
+                        <div class="special-icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="15" y="10" width="30" height="40" rx="2"/><path d="M22 20h16M22 28h16M22 36h10"/><path d="M40 35l4 4l8-8" stroke="#C5A572"/>
+                            </svg>
+                        </div>
+                        <h3 class="special-title">АКЦИЯ ДЛЯ НОВЫХ ПАЦИЕНТОВ - 3 990 ₽</h3>
+                        <div class="special-underline"></div>
+                        <p class="special-description">Мы рады новым пациентам! На первый визит: чистка зубов, комплексный осмотр и рентген всего за 3 990 ₽. Добро пожаловать в нашу семью!</p>
+                        <a href="tel:+74951234567" class="btn btn-primary">Позвонить +7 (495) 123-45-67</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-text" style="color: white;"><span class="logo-small">ЗДОРОВАЯ</span><span class="logo-main">Улыбка</span><span class="logo-sub">СТОМАТОЛОГИЯ</span></div>
+                    </a>
+                    <p class="footer-description">Современная стоматологическая клиника, предоставляющая полный спектр услуг для всей семьи.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="VK"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4 8.57 4 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.814-.542 1.27-1.422 2.18-3.608 2.18-3.608.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg></a>
+                        <a href="#" class="social-link" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.538-.194 1.006.128.832.942z"/></svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#therapy">Терапия</a></li>
+                        <li><a href="services.html#surgery">Хирургия</a></li>
+                        <li><a href="services.html#orthodontics">Ортодонтия</a></li>
+                        <li><a href="services.html#implantation">Имплантация</a></li>
+                        <li><a href="services.html#whitening">Отбеливание</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">О клинике</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="team.html">Наша команда</a></li>
+                        <li><a href="#testimonials">Отзывы</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Пациентам</h4>
+                    <ul class="footer-links">
+                        <li><a href="first-visit.html">Первый визит</a></li>
+                        <li><a href="payment.html">Оплата</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#specials">Акции</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@healthy-smile.ru">info@healthy-smile.ru</a></li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><address>ул. Примерная, д. 123, Москва</address></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Здоровая Улыбка. Все права защищены.</p>
+                <ul class="footer-legal">
+                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="terms.html">Условия использования</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Countdown Popup Modal -->
+    <div class="countdown-modal" id="countdownModal">
+        <div class="countdown-modal-content">
+            <button class="countdown-modal-close" id="countdownClose" aria-label="Закрыть">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+
+            <div class="countdown-modal-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+            </div>
+
+            <h3 class="countdown-modal-title">Ваши страховые льготы истекают!</h3>
+            <p class="countdown-modal-subtitle">Используйте оставшиеся стоматологические льготы до конца года</p>
+
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="countdownDays">00</span>
+                    <span class="countdown-label">Дней</span>
+                </div>
+                <span class="countdown-divider">:</span>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="countdownHours">00</span>
+                    <span class="countdown-label">Часов</span>
+                </div>
+                <span class="countdown-divider">:</span>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="countdownMinutes">00</span>
+                    <span class="countdown-label">Минут</span>
+                </div>
+                <span class="countdown-divider">:</span>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="countdownSeconds">00</span>
+                    <span class="countdown-label">Секунд</span>
+                </div>
+            </div>
+
+            <p class="countdown-modal-text">
+                Не упустите возможность! Большинство страховых планов обнуляют неиспользованные льготы 31 декабря.
+                Запишитесь сейчас, чтобы максимально использовать ваше покрытие.
+            </p>
+
+            <a href="insurance.html" class="countdown-modal-btn">Узнать о страховании</a>
+
+            <p class="countdown-modal-note">Мы принимаем большинство страховых планов</p>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-window" id="chatWindow">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Консультант" class="chat-header-avatar">
+                    <div class="chat-header-text">
+                        <span class="chat-header-name">Консультант</span>
+                        <span class="chat-header-status"><span class="status-dot"></span> Онлайн</span>
+                    </div>
+                </div>
+                <button class="chat-close-btn" id="chatCloseBtn" aria-label="Закрыть чат">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message incoming">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="" class="message-avatar">
+                    <div class="message-content">
+                        <p>Здравствуйте! 👋</p>
+                        <p>Добро пожаловать в клинику "Здоровая Улыбка". Чем могу помочь?</p>
+                        <span class="message-time">Сейчас</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Replies -->
+            <div class="chat-quick-replies">
+                <button class="quick-reply-btn" onclick="sendQuickReply('Хочу записаться на прием')">Записаться на прием</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Узнать цены')">Узнать цены</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Часы работы?')">Часы работы</button>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение..." onkeypress="if(event.key==='Enter')sendMessage()">
+                <button class="chat-send-btn" id="chatSendBtn" onclick="sendMessage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <button class="chat-button" id="chatButton" aria-label="Открыть чат">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                <circle cx="8" cy="10" r="1.2"/>
+                <circle cx="12" cy="10" r="1.2"/>
+                <circle cx="16" cy="10" r="1.2"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+    // Chat functionality
+    function toggleChat() {
+        const chatWindow = document.getElementById('chatWindow');
+        chatWindow.classList.toggle('open');
+    }
+
+    document.getElementById('chatButton').addEventListener('click', toggleChat);
+    document.getElementById('chatCloseBtn').addEventListener('click', toggleChat);
+
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        if (!message) return;
+
+        addMessage(message, 'outgoing');
+        input.value = '';
+
+        // Simulate response
+        setTimeout(() => {
+            const responses = [
+                'Спасибо за ваше сообщение! Наш специалист скоро свяжется с вами.',
+                'Для записи на прием позвоните по номеру +7 (495) 123-45-67 или оставьте заявку на сайте.',
+                'Мы работаем: Пн-Пт 9:00-20:00, Сб 10:00-18:00. Будем рады вас видеть!'
+            ];
+            addMessage(responses[Math.floor(Math.random() * responses.length)], 'incoming');
+        }, 1000);
+    }
+
+    function sendQuickReply(text) {
+        addMessage(text, 'outgoing');
+
+        setTimeout(() => {
+            let response = '';
+            if (text.includes('записаться')) {
+                response = 'Отлично! Для записи позвоните +7 (495) 123-45-67 или нажмите кнопку "Записаться" в меню сайта. Какая услуга вас интересует?';
+            } else if (text.includes('цены')) {
+                response = 'Консультация - бесплатно, чистка от 3000₽, лечение кариеса от 4500₽. Полный прайс на странице "Услуги".';
+            } else if (text.includes('Часы')) {
+                response = 'Мы работаем: Пн-Пт с 9:00 до 20:00, Сб с 10:00 до 18:00. Вс - выходной. Ждём вас!';
+            }
+            addMessage(response, 'incoming');
+        }, 800);
+    }
+
+    function addMessage(text, type) {
+        const messagesDiv = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'chat-message ' + type;
+
+        const now = new Date();
+        const time = now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+
+        if (type === 'incoming') {
+            messageDiv.innerHTML = '<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="" class="message-avatar"><div class="message-content"><p>' + text + '</p><span class="message-time">' + time + '</span></div>';
+        } else {
+            messageDiv.innerHTML = '<div class="message-content"><p>' + text + '</p><span class="message-time">' + time + '</span></div>';
+        }
+
+        messagesDiv.appendChild(messageDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+    </script>
+
+    <script src="js/navigation.js?v=3.0"></script>
+    <script src="js/slider.js?v=3.0"></script>
+    <script src="js/main.js?v=3.0"></script>
+
+    <script>
+        // Page Loader
+        (function() {
+            const loader = document.getElementById('pageLoader');
+
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loader.classList.add('loaded');
+                    document.body.classList.add('content-fade');
+                }, 800);
+            });
+        })();
+
+        // Tilt Effect for Cards
+        document.querySelectorAll('.tilt-effect').forEach(function(card) {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+
+        // Show chat popup after 3 seconds
+        setTimeout(function() {
+            document.getElementById('chatPopup').classList.add('visible');
+            setTimeout(function() {
+                document.getElementById('chatPopup').classList.remove('visible');
+            }, 8000);
+        }, 3000);
+
+        // Before/After Slider Functionality
+        document.querySelectorAll('.before-after-slider').forEach(function(slider) {
+            var handle = slider.querySelector('.slider-handle');
+            var afterImage = slider.querySelector('.after-image');
+            var isDragging = false;
+
+            function updateSlider(x) {
+                var rect = slider.getBoundingClientRect();
+                var percentage = Math.min(Math.max((x - rect.left) / rect.width * 100, 0), 100);
+                handle.style.left = percentage + '%';
+                afterImage.style.clipPath = 'inset(0 ' + (100 - percentage) + '% 0 0)';
+            }
+
+            handle.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', function(e) {
+                if (isDragging) {
+                    updateSlider(e.clientX);
+                }
+            });
+
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+
+            // Touch events
+            handle.addEventListener('touchstart', function(e) {
+                isDragging = true;
+            });
+
+            document.addEventListener('touchmove', function(e) {
+                if (isDragging) {
+                    updateSlider(e.touches[0].clientX);
+                }
+            });
+
+            document.addEventListener('touchend', function() {
+                isDragging = false;
+            });
+        });
+
+        // Counter Animation
+        function animateCounter(element, target) {
+            var current = 0;
+            var increment = target / 100;
+            var duration = 2000;
+            var stepTime = duration / 100;
+
+            var timer = setInterval(function() {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString('ru-RU');
+            }, stepTime);
+        }
+
+        // Observe counter elements
+        var counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var target = parseInt(entry.target.getAttribute('data-counter'));
+                    if (target && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        animateCounter(entry.target, target);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-counter]').forEach(function(el) {
+            counterObserver.observe(el);
+        });
+
+        // FAQ Accordion (for FAQ section if present)
+        document.querySelectorAll('.faq-question').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(function(faq) {
+                    faq.classList.remove('active');
+                });
+
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Countdown Modal Functionality
+        (function() {
+            const modal = document.getElementById('countdownModal');
+            const closeBtn = document.getElementById('countdownClose');
+
+            // Calculate end of year
+            function getEndOfYear() {
+                const now = new Date();
+                return new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+            }
+
+            // Update countdown
+            function updateCountdown() {
+                const now = new Date();
+                const endOfYear = getEndOfYear();
+                const diff = endOfYear - now;
+
+                if (diff <= 0) return;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('countdownDays').textContent = days.toString().padStart(2, '0');
+                document.getElementById('countdownHours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('countdownMinutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('countdownSeconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            // Show modal after delay (only once per session)
+            function showModal() {
+                if (sessionStorage.getItem('countdownModalShown')) return;
+
+                setTimeout(function() {
+                    modal.classList.add('visible');
+                    document.body.style.overflow = 'hidden';
+                    sessionStorage.setItem('countdownModalShown', 'true');
+                }, 5000);
+            }
+
+            // Close modal
+            function closeModal() {
+                modal.classList.remove('visible');
+                document.body.style.overflow = '';
+            }
+
+            // Event listeners
+            closeBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeModal();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('visible')) {
+                    closeModal();
+                }
+            });
+
+            // Initialize
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            showModal();
+        })();
+    </script>
+</body>
+</html>

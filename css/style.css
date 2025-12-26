@@ -926,6 +926,7 @@ address {
     gap: var(--spacing-4);
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: var(--spacing-2);
 }
 
 /* ============================================
@@ -6997,10 +6998,14 @@ footer {
     .hero-main {
         min-height: calc(100vh - 58px);
         min-height: calc(100dvh - 58px);
+        align-items: flex-start;
     }
 
     .hero-main-content {
-        padding: 1.75rem 1rem;
+        padding: 2rem 1rem 1.5rem;
+        position: static;
+        transform: none;
+        padding-top: 5rem;
     }
 
     .hero-logo-large {

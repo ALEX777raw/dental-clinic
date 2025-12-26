@@ -7007,6 +7007,10 @@ footer {
         transform: none;
         padding-top: 4.5rem;
         z-index: 10;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .hero-logo-large {

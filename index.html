@@ -1769,39 +1769,8 @@
             });
         });
 
-        // Counter Animation
-        function animateCounter(element, target) {
-            var current = 0;
-            var increment = target / 100;
-            var duration = 2000;
-            var stepTime = duration / 100;
-
-            var timer = setInterval(function() {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current).toLocaleString('ru-RU');
-            }, stepTime);
-        }
-
-        // Observe counter elements
-        var counterObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var target = parseInt(entry.target.getAttribute('data-counter'));
-                    if (target && !entry.target.classList.contains('counted')) {
-                        entry.target.classList.add('counted');
-                        animateCounter(entry.target, target);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('[data-counter]').forEach(function(el) {
-            counterObserver.observe(el);
-        });
+        // Counter Animation - handled by main.js
+        // Removed duplicate counterObserver to prevent performance issues
 
         // FAQ Accordion (for FAQ section if present)
         document.querySelectorAll('.faq-question').forEach(function(button) {
@@ -2047,12 +2016,13 @@
         }
 
         // ============================================
-        // NATIVE SCROLL (NO DELAY)
+        // NATIVE SCROLL (OPTIMIZED)
         // ============================================
         let lastScrollTop = 0;
         let lastScrollTime = Date.now();
+        let scrollTicking = false;
 
-        window.addEventListener('scroll', () => {
+        function updateScrollEffects() {
             const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const currentTime = Date.now();
             const timeDelta = Math.max(currentTime - lastScrollTime, 1);
@@ -2068,8 +2038,22 @@
 
             // Update progress bar
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (currentScrollTop / scrollHeight) * 100;
-            document.getElementById('scrollProgressBar').style.width = progress + '%';
+            if (scrollHeight > 0) {
+                const progress = (currentScrollTop / scrollHeight) * 100;
+                const progressBar = document.getElementById('scrollProgressBar');
+                if (progressBar) {
+                    progressBar.style.width = progress + '%';
+                }
+            }
+
+            scrollTicking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                window.requestAnimationFrame(updateScrollEffects);
+                scrollTicking = true;
+            }
         }, { passive: true });
 
         // ============================================
@@ -2083,74 +2067,74 @@
             targetScrollSpeed *= 0.95; // Decay
         });
 
-        // Animate service cards on scroll
+        // Animate service cards on scroll - Optimized
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                gsap.utils.toArray('.service-card').forEach((card, i) => {
+            // Removed setTimeout to reduce lag
+            const serviceCards = document.querySelectorAll('.service-card');
+            if (serviceCards.length > 0) {
+                gsap.utils.toArray(serviceCards).forEach((card) => {
                     gsap.fromTo(card,
-                        {
-                            opacity: 0,
-                            y: 80,
-                            scale: 0.95
-                        },
+                        { opacity: 0, y: 60, scale: 0.98 },
                         {
                             opacity: 1,
                             y: 0,
                             scale: 1,
-                            duration: 0.8,
-                            ease: 'power3.out',
-                            scrollTrigger: {
-                                trigger: card,
-                                start: 'top 85%',
-                                end: 'top 50%',
-                                toggleActions: 'play none none reverse'
-                            }
-                        }
-                    );
-                });
-
-                // Animate testimonial cards
-                gsap.utils.toArray('.testimonial-card').forEach((card) => {
-                    gsap.fromTo(card,
-                        {
-                            opacity: 0,
-                            y: 60
-                        },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.7,
-                            ease: 'power2.out',
-                            scrollTrigger: {
-                                trigger: card,
-                                start: 'top 85%',
-                                toggleActions: 'play none none reverse'
-                            }
-                        }
-                    );
-                });
-
-                // Animate section headings
-                gsap.utils.toArray('.section-title, .section-heading').forEach((heading) => {
-                    gsap.fromTo(heading,
-                        {
-                            opacity: 0,
-                            y: 40
-                        },
-                        {
-                            opacity: 1,
-                            y: 0,
                             duration: 0.6,
                             ease: 'power2.out',
                             scrollTrigger: {
-                                trigger: heading,
-                                start: 'top 90%',
-                                toggleActions: 'play none none reverse'
+                                trigger: card,
+                                start: 'top 88%',
+                                toggleActions: 'play none none none',
+                                once: true
                             }
                         }
                     );
                 });
-            }, 100);
+            }
+
+            // Animate testimonial cards - Optimized
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            if (testimonialCards.length > 0) {
+                gsap.utils.toArray(testimonialCards).forEach((card) => {
+                    gsap.fromTo(card,
+                        { opacity: 0, y: 50 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.5,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: card,
+                                start: 'top 88%',
+                                toggleActions: 'play none none none',
+                                once: true
+                            }
+                        }
+                    );
+                });
+            }
+
+            // Animate section headings - Optimized
+            const headings = document.querySelectorAll('.section-title, .section-heading');
+            if (headings.length > 0) {
+                gsap.utils.toArray(headings).forEach((heading) => {
+                    gsap.fromTo(heading,
+                        { opacity: 0, y: 30 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.5,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: heading,
+                                start: 'top 92%',
+                                toggleActions: 'play none none none',
+                                once: true
+                            }
+                        }
+                    );
+                });
+            }
         });
 
         // ============================================

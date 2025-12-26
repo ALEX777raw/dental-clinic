@@ -50,12 +50,22 @@
         const heroImage = document.querySelector('.hero-bg-image');
         const parallaxElements = document.querySelectorAll('.services-bg-image, .cta-bg-image');
 
+        if (!heroImage && parallaxElements.length === 0) return;
+
         let ticking = false;
+        let lastScrollY = 0;
 
         function updateParallax() {
             const scrollTop = window.pageYOffset;
 
-            // Hero parallax effect - image moves with scroll
+            // Skip update if scroll change is minimal
+            if (Math.abs(scrollTop - lastScrollY) < 1) {
+                ticking = false;
+                return;
+            }
+            lastScrollY = scrollTop;
+
+            // Hero parallax effect - only if visible
             if (heroImage) {
                 const heroSection = heroImage.closest('.hero-main');
                 if (heroSection) {
@@ -63,7 +73,6 @@
                     const isVisible = rect.bottom > 0 && rect.top < window.innerHeight;
 
                     if (isVisible) {
-                        // Calculate movement based on section position
                         const speed = 0.3;
                         const yPos = -rect.top * speed;
                         heroImage.style.transform = 'translate3d(0, ' + yPos + 'px, 0)';
@@ -71,7 +80,7 @@
                 }
             }
 
-            // Other parallax elements
+            // Other parallax elements - only process visible ones
             parallaxElements.forEach(function(el) {
                 const parent = el.closest('section');
                 if (!parent) return;
@@ -325,31 +334,25 @@
         if (!animatedElements.length) return;
 
         // Intersection Observer for scroll animations
+        // Using optimized settings to reduce lag
         const animationObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(function() {
+                        entry.target.classList.add('animated');
+                    }, parseInt(delay));
                     animationObserver.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -80px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
 
         animatedElements.forEach(function(el) {
             animationObserver.observe(el);
         });
-
-        // Animate elements already in view on page load
-        setTimeout(function() {
-            animatedElements.forEach(function(el) {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    el.classList.add('animated');
-                }
-            });
-        }, 100);
     }
 
     /**
@@ -368,12 +371,13 @@
             providerDesc.setAttribute('data-delay', '200');
         }
 
-        // Section titles
-        document.querySelectorAll('.section-title').forEach(function(el, i) {
-            if (!el.hasAttribute('data-animate')) {
-                el.setAttribute('data-animate', 'fade-up');
-            }
-        });
+        // Section titles - skip if GSAP will handle them
+        // Commented out to prevent double animation with GSAP ScrollTrigger
+        // document.querySelectorAll('.section-title').forEach(function(el, i) {
+        //     if (!el.hasAttribute('data-animate')) {
+        //         el.setAttribute('data-animate', 'fade-up');
+        //     }
+        // });
 
         document.querySelectorAll('.section-subtitle').forEach(function(el) {
             if (!el.hasAttribute('data-animate')) {
@@ -399,17 +403,19 @@
             el.setAttribute('data-delay', String((i + 1) * 200));
         });
 
-        // Service cards
-        document.querySelectorAll('.service-card').forEach(function(el, i) {
-            el.setAttribute('data-animate', 'fade-up');
-            el.setAttribute('data-delay', String(i * 150));
-        });
+        // Service cards - skip if GSAP will handle them
+        // Commented out to prevent double animation with GSAP ScrollTrigger
+        // document.querySelectorAll('.service-card').forEach(function(el, i) {
+        //     el.setAttribute('data-animate', 'fade-up');
+        //     el.setAttribute('data-delay', String(i * 150));
+        // });
 
-        // Testimonial cards
-        document.querySelectorAll('.testimonial-card').forEach(function(el, i) {
-            el.setAttribute('data-animate', 'zoom-in');
-            el.setAttribute('data-delay', String(i * 100));
-        });
+        // Testimonial cards - skip if GSAP will handle them
+        // Commented out to prevent double animation with GSAP ScrollTrigger
+        // document.querySelectorAll('.testimonial-card').forEach(function(el, i) {
+        //     el.setAttribute('data-animate', 'zoom-in');
+        //     el.setAttribute('data-delay', String(i * 100));
+        // });
 
         // Special cards
         document.querySelectorAll('.special-card').forEach(function(el, i) {

@@ -126,53 +126,57 @@
 }
 
 .quick-contact-item {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(27, 58, 93, 0.85);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(197, 165, 114, 0.4);
     border-radius: 16px;
     padding: 1.5rem 1rem;
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .quick-contact-item:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(27, 58, 93, 0.95);
     border-color: #C5A572;
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(197, 165, 114, 0.3);
+    box-shadow: 0 15px 40px rgba(197, 165, 114, 0.5);
 }
 
 .quick-contact-item.urgent {
-    background: rgba(220, 38, 38, 0.15);
-    border-color: rgba(220, 38, 38, 0.4);
+    background: rgba(220, 38, 38, 0.85);
+    border-color: rgba(255, 100, 100, 0.6);
 }
 
 .quick-contact-item.urgent:hover {
-    background: rgba(220, 38, 38, 0.25);
-    border-color: #DC2626;
+    background: rgba(220, 38, 38, 0.95);
+    border-color: #FF6B6B;
+    box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5);
 }
 
 .qc-icon {
     width: 60px;
     height: 60px;
     margin: 0 auto 0.75rem;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(197, 165, 114, 0.25);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #C5A572;
+    color: #F4E4C1;
     transition: all 0.3s ease;
 }
 
 .quick-contact-item:hover .qc-icon {
-    background: rgba(197, 165, 114, 0.3);
+    background: rgba(197, 165, 114, 0.5);
     transform: scale(1.1) rotate(5deg);
+    color: #FFF;
 }
 
 .quick-contact-item.urgent .qc-icon {
-    color: #DC2626;
+    color: #FFE5E5;
+    background: rgba(255, 100, 100, 0.3);
     animation: pulse 2s ease-in-out infinite;
 }
 
@@ -183,29 +187,33 @@
 
 .qc-title {
     font-size: 0.875rem;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    color: #FFF;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .qc-link {
     display: inline-block;
     font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #FFF;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(197, 165, 114, 0.3);
     border-radius: 8px;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 600;
+    border: 1px solid rgba(197, 165, 114, 0.5);
 }
 
 .qc-link:hover {
     background: #C5A572;
     color: #1B3A5D;
     transform: scale(1.05);
+    border-color: #C5A572;
+    box-shadow: 0 4px 12px rgba(197, 165, 114, 0.4);
 }
 
 /* ============================================

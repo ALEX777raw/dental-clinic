@@ -78,6 +78,7 @@
     <link rel="stylesheet" href="css/style.css?v=3.0">
     <link rel="stylesheet" href="css/components.css?v=3.0">
     <link rel="stylesheet" href="css/responsive.css?v=3.0">
+    <link rel="stylesheet" href="css/hero-slider.css?v=1.0">
 </head>
 <body>
     <!-- Page Loader -->
@@ -242,11 +243,61 @@
     <!-- Main Content -->
     <main class="main-content">
 
-        <!-- Hero Section with Background -->
+        <!-- Hero Section with Slider -->
         <section class="hero-main" id="heroMain">
-            <div class="hero-background">
-                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Modern Dental Office" class="hero-bg-image">
-                <div class="hero-overlay"></div>
+            <div class="hero-slider">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80&fm=webp" alt="Modern Dental Office" class="hero-bg-image" loading="eager">
+                    <div class="hero-overlay"></div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1920&q=80&fm=webp" alt="Professional Dental Care" class="hero-bg-image" loading="lazy">
+                    <div class="hero-overlay"></div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80&fm=webp" alt="Advanced Dentistry" class="hero-bg-image" loading="lazy">
+                    <div class="hero-overlay"></div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1920&q=80&fm=webp" alt="Smile Transformation" class="hero-bg-image" loading="lazy">
+                    <div class="hero-overlay"></div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1609840113972-722f8b4caee6?w=1920&q=80&fm=webp" alt="Cosmetic Dentistry" class="hero-bg-image" loading="lazy">
+                    <div class="hero-overlay"></div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&q=80&fm=webp" alt="Family Dental Care" class="hero-bg-image" loading="lazy">
+                    <div class="hero-overlay"></div>
+                </div>
+
+                <!-- Slider Navigation -->
+                <button class="slider-nav slider-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="slider-nav slider-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Slider Dots -->
+                <div class="slider-dots">
+                    <button class="slider-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="slider-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="slider-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="slider-dot" data-slide="3" aria-label="Go to slide 4"></button>
+                    <button class="slider-dot" data-slide="4" aria-label="Go to slide 5"></button>
+                    <button class="slider-dot" data-slide="5" aria-label="Go to slide 6"></button>
+                </div>
             </div>
 
             <!-- Floating Decorative Shapes -->
@@ -280,6 +331,75 @@
                     <div class="hero-buttons">
                         <a href="membership.html" class="btn btn-primary btn-pulse shine-sweep">Our Membership</a>
                         <a href="#specials" class="btn btn-primary btn-bounce shine-sweep">New Patient Special</a>
+                    </div>
+
+                    <!-- Quick Contact Forms Grid (6 forms on first fold) -->
+                    <div class="quick-contact-grid">
+                        <!-- Form 1: Call Now -->
+                        <div class="quick-contact-item">
+                            <div class="qc-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <h3 class="qc-title">Call Now</h3>
+                            <a href="tel:+17035550123" class="qc-link">(703) 555-0123</a>
+                        </div>
+
+                        <!-- Form 2: Book Online -->
+                        <div class="quick-contact-item">
+                            <div class="qc-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                            </div>
+                            <h3 class="qc-title">Book Online</h3>
+                            <a href="booking.html" class="qc-link">Schedule Now</a>
+                        </div>
+
+                        <!-- Form 3: Emergency -->
+                        <div class="quick-contact-item urgent">
+                            <div class="qc-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                                </svg>
+                            </div>
+                            <h3 class="qc-title">Emergency</h3>
+                            <a href="tel:+17035550123" class="qc-link">24/7 Help</a>
+                        </div>
+
+                        <!-- Form 4: Text Us -->
+                        <div class="quick-contact-item">
+                            <div class="qc-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="qc-title">Text Us</h3>
+                            <a href="sms:+17035550123" class="qc-link">Send SMS</a>
+                        </div>
+
+                        <!-- Form 5: Email -->
+                        <div class="quick-contact-item">
+                            <div class="qc-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <h3 class="qc-title">Email Us</h3>
+                            <a href="mailto:info@alexandriadentistry.com" class="qc-link">Send Email</a>
+                        </div>
+
+                        <!-- Form 6: Virtual Consult -->
+                        <div class="quick-contact-item">
+                            <div class="qc-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                                </svg>
+                            </div>
+                            <h3 class="qc-title">Virtual Consult</h3>
+                            <a href="booking.html?type=virtual" class="qc-link">Start Video</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2110,6 +2230,98 @@
                 cursor.style.borderColor = 'rgba(0, 122, 204, 0.5)';
             });
         });
+
+        // ============================================
+        // HERO SLIDER - Lightweight Auto-Rotate
+        // ============================================
+        (function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+
+            if (!slides.length) return;
+
+            let currentSlide = 0;
+            const slideInterval = 5000; // 5 seconds per slide
+            let autoplayTimer;
+
+            function showSlide(index) {
+                // Wrap around
+                if (index >= slides.length) index = 0;
+                if (index < 0) index = slides.length - 1;
+
+                currentSlide = index;
+
+                // Update slides
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === currentSlide);
+                });
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayTimer = setInterval(nextSlide, slideInterval);
+            }
+
+            function stopAutoplay() {
+                if (autoplayTimer) {
+                    clearInterval(autoplayTimer);
+                }
+            }
+
+            // Event listeners
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoplay(); // Restart autoplay after manual change
+            });
+
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoplay();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    startAutoplay();
+                });
+            });
+
+            // Pause on hover
+            const heroSlider = document.querySelector('.hero-slider');
+            if (heroSlider) {
+                heroSlider.addEventListener('mouseenter', stopAutoplay);
+                heroSlider.addEventListener('mouseleave', startAutoplay);
+            }
+
+            // Start autoplay
+            startAutoplay();
+
+            // Preload next image for smooth transition
+            function preloadNextImage() {
+                const nextIndex = (currentSlide + 1) % slides.length;
+                const nextImg = slides[nextIndex].querySelector('img');
+                if (nextImg && nextImg.loading === 'lazy') {
+                    nextImg.loading = 'eager';
+                }
+            }
+
+            setInterval(preloadNextImage, slideInterval - 1000);
+        })();
 
         // ============================================
         // START

@@ -1,0 +1,312 @@
+/* ============================================
+   HERO SLIDER - Lightweight & Fast
+   ============================================ */
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.hero-slide .hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(27, 58, 93, 0.85) 0%, rgba(27, 58, 93, 0.6) 50%, rgba(197, 165, 114, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Slider Navigation Arrows */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-nav:hover {
+    background: rgba(197, 165, 114, 0.9);
+    border-color: #C5A572;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-prev {
+    left: 2rem;
+}
+
+.slider-next {
+    right: 2rem;
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.slider-dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
+}
+
+.slider-dot.active {
+    background: #C5A572;
+    border-color: #C5A572;
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* ============================================
+   QUICK CONTACT GRID - 6 Forms on First Fold
+   ============================================ */
+
+.quick-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quick-contact-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.quick-contact-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #C5A572;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(197, 165, 114, 0.3);
+}
+
+.quick-contact-item.urgent {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.4);
+}
+
+.quick-contact-item.urgent:hover {
+    background: rgba(220, 38, 38, 0.25);
+    border-color: #DC2626;
+}
+
+.qc-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C5A572;
+    transition: all 0.3s ease;
+}
+
+.quick-contact-item:hover .qc-icon {
+    background: rgba(197, 165, 114, 0.3);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.quick-contact-item.urgent .qc-icon {
+    color: #DC2626;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.qc-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.qc-link {
+    display: inline-block;
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.qc-link:hover {
+    background: #C5A572;
+    color: #1B3A5D;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE & TABLET
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 991px) {
+    .quick-contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .slider-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-prev {
+        left: 1rem;
+    }
+
+    .slider-next {
+        right: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .quick-contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    .quick-contact-item {
+        padding: 1rem 0.75rem;
+    }
+
+    .qc-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .qc-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .qc-title {
+        font-size: 0.75rem;
+    }
+
+    .qc-link {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .slider-nav {
+        display: none; /* Hide arrows on mobile, use dots only */
+    }
+
+    .slider-dots {
+        bottom: 2rem;
+        gap: 8px;
+    }
+
+    .slider-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slider-dot.active {
+        width: 24px;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 480px) {
+    .quick-contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .quick-contact-item {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .qc-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.5rem;
+    }
+
+    .qc-title {
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .qc-link {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+    }
+}

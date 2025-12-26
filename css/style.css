@@ -805,7 +805,7 @@ address {
 }
 
 /* ============================================
-   HERO MAIN SECTION
+   HERO MAIN SECTION - Full Width
    ============================================ */
 .hero-main {
     position: relative;
@@ -815,6 +815,9 @@ address {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .hero-background {

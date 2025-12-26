@@ -124,8 +124,52 @@
                 break;
         }
 
+        // Update visual state of buttons
+        updateFontButtonStates();
+
         savePreference('fontLevel', currentFontLevel);
-        announceChange('Font size changed to level ' + currentFontLevel);
+
+        // Announce change
+        const levelText = currentFontLevel === 0 ? 'normal' :
+                         currentFontLevel === 1 ? 'large (125%)' :
+                         currentFontLevel === 2 ? 'larger (150%)' : 'largest (175%)';
+        announceChange('Font size changed to ' + levelText);
+    }
+
+    /**
+     * Update Font Button Visual States
+     */
+    function updateFontButtonStates() {
+        // Remove active class from all buttons
+        fontButtons.forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+
+        // Highlight the appropriate button based on current level
+        fontButtons.forEach(function(btn) {
+            const action = btn.getAttribute('data-action');
+
+            // Highlight reset button when at normal size
+            if (currentFontLevel === 0 && action === 'font-reset') {
+                btn.classList.add('active');
+            }
+            // Highlight increase button when size is increased
+            else if (currentFontLevel > 0 && action === 'font-increase') {
+                btn.classList.add('active');
+                // Update button text to show level
+                if (currentFontLevel === 1) {
+                    btn.innerHTML = 'A+';
+                } else if (currentFontLevel === 2) {
+                    btn.innerHTML = 'A++';
+                } else if (currentFontLevel === 3) {
+                    btn.innerHTML = 'A+++';
+                }
+            }
+            // Reset the increase button text when back to normal
+            else if (currentFontLevel === 0 && action === 'font-increase') {
+                btn.innerHTML = 'A+';
+            }
+        });
     }
 
     /**
@@ -210,6 +254,9 @@
         // Clear localStorage
         localStorage.removeItem('accessibility-preferences');
 
+        // Update button states
+        updateFontButtonStates();
+
         announceChange('All accessibility settings have been reset');
     }
 
@@ -274,6 +321,9 @@
                 reduceMotionToggle.checked = true;
                 document.body.classList.add('reduce-motion');
             }
+
+            // Update button states after loading preferences
+            updateFontButtonStates();
         } catch (e) {
             console.warn('Could not load accessibility preferences:', e);
         }

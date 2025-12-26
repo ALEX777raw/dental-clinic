@@ -284,15 +284,23 @@
 
 /* Font Size Adjustments */
 body.font-size-large {
-    font-size: 118% !important;
+    font-size: 125% !important;
 }
 
 body.font-size-larger {
-    font-size: 135% !important;
+    font-size: 150% !important;
 }
 
 body.font-size-largest {
-    font-size: 150% !important;
+    font-size: 175% !important;
+}
+
+/* Active button indication */
+.accessibility-control-btn.active {
+    background: #1B3A5D !important;
+    color: #FFF !important;
+    border-color: #1B3A5D !important;
+    box-shadow: 0 2px 8px rgba(27, 58, 93, 0.4) !important;
 }
 
 /* High Contrast Mode */

@@ -1015,3 +1015,35 @@
         }
     }
 }
+
+/* ============================================
+   SCROLL EFFECTS OPTIMIZATION FOR MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+    /* Reduce opacity of Three.js canvas on mobile for better visibility */
+    #webgl-distortion-canvas {
+        opacity: 0.08 !important;
+    }
+
+    /* Make scroll progress bar slightly thinner on mobile */
+    .scroll-progress-indicator {
+        height: 2px !important;
+    }
+
+    /* Hide custom cursor on mobile (already done in JS, but safety fallback) */
+    body::after {
+        display: none !important;
+    }
+}
+
+@media (max-width: 375px) {
+    /* Further reduce canvas opacity on very small screens */
+    #webgl-distortion-canvas {
+        opacity: 0.05 !important;
+    }
+
+    /* Thinnest progress bar for small screens */
+    .scroll-progress-indicator {
+        height: 1.5px !important;
+    }
+}

@@ -232,10 +232,6 @@
         margin: 0 auto;
     }
 
-    .map-container iframe {
-        height: 350px;
-    }
-
     /* Insurance */
     .insurance-content {
         grid-template-columns: 1fr;
@@ -452,10 +448,6 @@
 
     .contact-title {
         font-size: var(--font-size-2xl);
-    }
-
-    .map-container iframe {
-        height: 300px;
     }
 
     /* Insurance */
@@ -680,10 +672,6 @@
 
     .hours-list li {
         font-size: var(--font-size-sm);
-    }
-
-    .map-container iframe {
-        height: 250px;
     }
 
     /* Insurance */

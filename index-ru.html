@@ -1842,7 +1842,16 @@
         let targetScrollSpeed = 0;
         let time = 0;
 
+        // Detect mobile device
+        const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
         function initDistortionEffect() {
+            // Skip heavy 3D effects on very small/old mobile devices
+            if (isMobile && window.innerWidth < 375) {
+                document.getElementById('webgl-distortion-canvas').style.display = 'none';
+                return;
+            }
+
             // Scene
             scene = new THREE.Scene();
 
@@ -1855,15 +1864,17 @@
             );
             camera.position.z = 5;
 
-            // Renderer
+            // Renderer - optimized for mobile
             const canvas = document.getElementById('webgl-distortion-canvas');
             renderer = new THREE.WebGLRenderer({
                 canvas: canvas,
                 alpha: true,
-                antialias: true
+                antialias: !isMobile, // Disable antialias on mobile for performance
+                powerPreference: isMobile ? 'low-power' : 'high-performance'
             });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            // Lower pixel ratio on mobile to improve performance
+            renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
 
             // Texture (use a gradient or subtle pattern)
             const textureLoader = new THREE.TextureLoader();
@@ -1884,8 +1895,9 @@
                 `)
             );
 
-            // Geometry
-            const geometry = new THREE.PlaneGeometry(8, 4.5, 32, 32);
+            // Geometry - fewer segments on mobile for better performance
+            const segments = isMobile ? 16 : 32;
+            const geometry = new THREE.PlaneGeometry(8, 4.5, segments, segments);
 
             // Material with custom shaders
             material = new THREE.ShaderMaterial({

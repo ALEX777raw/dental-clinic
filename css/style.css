@@ -7003,9 +7003,10 @@ footer {
 
     .hero-main-content {
         padding: 0.75rem 0.75rem 0.5rem;
-        position: static;
+        position: relative;
         transform: none;
         padding-top: 4.5rem;
+        z-index: 10;
     }
 
     .hero-logo-large {

@@ -929,32 +929,31 @@ address {
 }
 
 /* ============================================
-   PROVIDER SECTION
+   PROVIDER SECTION - Premium Static Design
    ============================================ */
 .provider-section {
     padding: var(--spacing-16) 0;
-    background: linear-gradient(135deg,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(230, 240, 250, 0.3) 25%,
-        rgba(248, 249, 250, 1) 50%,
-        rgba(230, 240, 250, 0.3) 75%,
-        rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(180deg,
+        rgba(250, 252, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(248, 250, 252, 1) 100%);
     position: relative;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(197, 165, 114, 0.15);
+    border-bottom: 1px solid rgba(197, 165, 114, 0.15);
 }
 
 .provider-section::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background:
-        radial-gradient(circle, rgba(197, 165, 114, 0.12) 0%, rgba(197, 165, 114, 0.04) 40%, transparent 70%),
-        radial-gradient(circle at 80% 20%, rgba(27, 58, 93, 0.04) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, rgba(197, 165, 114, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(27, 58, 93, 0.04) 0%, transparent 40%);
     pointer-events: none;
+    z-index: 0;
 }
 
 .provider-content {
@@ -967,19 +966,41 @@ address {
 }
 
 .provider-text {
-    background: #ffffff;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(250, 252, 255, 1) 100%);
     padding: var(--spacing-10);
     border-radius: var(--radius-2xl);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-    border: 3px solid rgba(197, 165, 114, 0.25);
+    box-shadow: 0 15px 50px rgba(27, 58, 93, 0.08), 0 5px 15px rgba(197, 165, 114, 0.1);
+    border: 2px solid rgba(197, 165, 114, 0.2);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.provider-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-2xl);
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(197, 165, 114, 0.3), rgba(27, 58, 93, 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .provider-text:hover {
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
-    border-color: rgba(197, 165, 114, 0.4);
-    transform: translateY(-2px);
+    box-shadow: 0 20px 60px rgba(27, 58, 93, 0.12), 0 8px 20px rgba(197, 165, 114, 0.15);
+    border-color: rgba(197, 165, 114, 0.35);
+    transform: translateY(-3px);
+}
+
+.provider-text:hover::before {
+    opacity: 1;
 }
 
 .provider-title {
@@ -1033,19 +1054,43 @@ address {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ffffff;
-    padding: var(--spacing-8);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(252, 248, 245, 1) 100%);
+    padding: var(--spacing-10);
     border-radius: var(--radius-2xl);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-    border: 3px solid rgba(197, 165, 114, 0.25);
+    box-shadow:
+        0 20px 50px rgba(197, 165, 114, 0.15),
+        0 10px 25px rgba(27, 58, 93, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(197, 165, 114, 0.3);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.provider-badge::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: var(--radius-2xl);
+    background: linear-gradient(135deg, rgba(197, 165, 114, 0.4), rgba(197, 165, 114, 0.1));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .provider-badge:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
-    border-color: rgba(197, 165, 114, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 25px 60px rgba(197, 165, 114, 0.2),
+        0 15px 35px rgba(27, 58, 93, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    border-color: rgba(197, 165, 114, 0.5);
+}
+
+.provider-badge:hover::before {
+    opacity: 1;
 }
 
 .badge-content {
@@ -1054,16 +1099,15 @@ address {
 
 .badge-icon {
     filter: drop-shadow(0 10px 20px rgba(197, 165, 114, 0.3));
+    transition: transform 0.3s ease;
 }
 
 .badge-icon svg {
     display: block;
-    animation: badgeFloat 6s ease-in-out infinite;
 }
 
-@keyframes badgeFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.badge-icon:hover {
+    transform: scale(1.05);
 }
 
 /* ============================================
@@ -2877,14 +2921,9 @@ a.contact-item-value:hover {
     }
 }
 
-/* Floating animation for badges */
+/* Static badge - no floating animation */
 .provider-badge {
-    animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    /* Animation removed for static design */
 }
 
 /* Google reviews badge animation */

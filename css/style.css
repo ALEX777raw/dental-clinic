@@ -7016,16 +7016,19 @@ footer {
     .hero-logo-text-small {
         font-size: 0.5rem;
         letter-spacing: 0.12em;
+        color: #F4E4C1 !important;
     }
 
     .hero-logo-text-main {
         font-size: 1.75rem;
         line-height: 1;
+        color: #FFFFFF !important;
     }
 
     .hero-logo-text-sub {
         font-size: 0.4375rem;
         letter-spacing: 0.12em;
+        color: #F4E4C1 !important;
     }
 
     .hero-tagline {
@@ -7033,12 +7036,15 @@ footer {
         padding: 0 0.5rem;
         margin: 0.5rem 0;
         letter-spacing: 0.18em;
+        color: #C5A572 !important;
+        -webkit-text-fill-color: #C5A572 !important;
     }
 
     .hero-cta-title {
         font-size: 0.875rem;
         margin: 0.5rem 0;
         line-height: 1.2;
+        color: #FFFFFF !important;
     }
 
     .hero-buttons {

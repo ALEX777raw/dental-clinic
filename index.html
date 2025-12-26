@@ -110,8 +110,8 @@
         <div class="scroll-progress-bar" id="scrollProgressBar" style="height: 100%; background: linear-gradient(90deg, #007ACC, #87CEEB); width: 0%; transition: width 0.1s ease;"></div>
     </div>
 
-    <!-- Three.js Canvas Overlay for Scroll Effects -->
-    <canvas id="webgl-distortion-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.15;"></canvas>
+    <!-- Three.js Canvas Overlay for Scroll Effects - DISABLED for performance -->
+    <!-- <canvas id="webgl-distortion-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; pointer-events: none; opacity: 0.15;"></canvas> -->
 
     <!-- Google Reviews Badge -->
     <a href="#testimonials" class="google-reviews-badge">
@@ -1857,8 +1857,8 @@
         })();
     </script>
 
-    <!-- Three.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Three.js Library - DISABLED for performance -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
 
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -2308,10 +2308,10 @@
         })();
 
         // ============================================
-        // START
+        // START - DISABLED for performance
         // ============================================
-        initDistortionEffect();
-        animateDistortion();
+        // initDistortionEffect();
+        // animateDistortion();
     </script>
 </body>
 </html>

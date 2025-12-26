@@ -79,6 +79,7 @@
     <link rel="stylesheet" href="css/components.css?v=3.0">
     <link rel="stylesheet" href="css/responsive.css?v=3.0">
     <link rel="stylesheet" href="css/hero-slider.css?v=1.0">
+    <link rel="stylesheet" href="css/accessibility.css?v=1.0">
 </head>
 <body>
     <!-- Page Loader -->
@@ -98,12 +99,137 @@
         </div>
     </div>
 
-    <!-- Accessibility Button -->
-    <button class="accessibility-btn" id="accessibilityBtn" aria-label="Accessibility Settings" onclick="document.body.classList.toggle('high-contrast'); alert('High contrast mode ' + (document.body.classList.contains('high-contrast') ? 'enabled' : 'disabled'));">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/>
-        </svg>
-    </button>
+    <!-- Accessibility Widget -->
+    <div class="accessibility-widget">
+        <button class="accessibility-btn" id="accessibilityBtn" aria-label="Accessibility Settings">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </button>
+
+        <!-- Accessibility Panel -->
+        <div class="accessibility-panel" id="accessibilityPanel">
+            <div class="accessibility-panel-header">
+                <h3>Accessibility Settings</h3>
+                <button class="accessibility-close" id="accessibilityClose" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="accessibility-panel-body">
+                <!-- Font Size Control -->
+                <div class="accessibility-option">
+                    <label class="accessibility-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="4 7 4 4 20 4 20 7"/>
+                            <line x1="9" y1="20" x2="15" y2="20"/>
+                            <line x1="12" y1="4" x2="12" y2="20"/>
+                        </svg>
+                        Font Size
+                    </label>
+                    <div class="accessibility-buttons">
+                        <button class="accessibility-control-btn" data-action="font-decrease" aria-label="Decrease font size">A-</button>
+                        <button class="accessibility-control-btn" data-action="font-reset" aria-label="Reset font size">A</button>
+                        <button class="accessibility-control-btn" data-action="font-increase" aria-label="Increase font size">A+</button>
+                    </div>
+                </div>
+
+                <!-- High Contrast -->
+                <div class="accessibility-option">
+                    <label class="accessibility-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2v20"/>
+                        </svg>
+                        High Contrast
+                    </label>
+                    <label class="accessibility-toggle">
+                        <input type="checkbox" id="highContrastToggle" aria-label="Toggle high contrast">
+                        <span class="accessibility-toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Dyslexia Friendly Font -->
+                <div class="accessibility-option">
+                    <label class="accessibility-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                        Dyslexia Font
+                    </label>
+                    <label class="accessibility-toggle">
+                        <input type="checkbox" id="dyslexiaFontToggle" aria-label="Toggle dyslexia friendly font">
+                        <span class="accessibility-toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Highlight Links -->
+                <div class="accessibility-option">
+                    <label class="accessibility-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                        </svg>
+                        Highlight Links
+                    </label>
+                    <label class="accessibility-toggle">
+                        <input type="checkbox" id="highlightLinksToggle" aria-label="Toggle link highlighting">
+                        <span class="accessibility-toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Readable Font -->
+                <div class="accessibility-option">
+                    <label class="accessibility-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="17" y1="10" x2="3" y2="10"/>
+                            <line x1="21" y1="6" x2="3" y2="6"/>
+                            <line x1="21" y1="14" x2="3" y2="14"/>
+                            <line x1="17" y1="18" x2="3" y2="18"/>
+                        </svg>
+                        Readable Font
+                    </label>
+                    <label class="accessibility-toggle">
+                        <input type="checkbox" id="readableFontToggle" aria-label="Toggle readable font">
+                        <span class="accessibility-toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Animations -->
+                <div class="accessibility-option">
+                    <label class="accessibility-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6"/>
+                        </svg>
+                        Reduce Motion
+                    </label>
+                    <label class="accessibility-toggle">
+                        <input type="checkbox" id="reduceMotionToggle" aria-label="Toggle reduced motion">
+                        <span class="accessibility-toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Reset Button -->
+                <button class="accessibility-reset-btn" id="accessibilityReset">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="1 4 1 10 7 10"/>
+                        <polyline points="23 20 23 14 17 14"/>
+                        <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                    </svg>
+                    Reset All Settings
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress-indicator" style="position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: rgba(0, 0, 0, 0.1); z-index: 10000; pointer-events: none;">
@@ -1684,6 +1810,7 @@
     <script src="js/navigation.js?v=3.0"></script>
     <script src="js/slider.js?v=3.0"></script>
     <script src="js/main.js?v=3.0"></script>
+    <script src="js/accessibility.js?v=1.0"></script>
 
     <script>
         // Page Loader
